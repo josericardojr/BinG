@@ -9,11 +9,7 @@ class LoadedXML:
         vertexs = []
 
         for v in vertex:
-            vaux = Vertex(v.find('ID'), v.find('type'), v.find('label'), v.find('date'))
-            vertexs.append(vaux)
-
-        #for v in vertexs:
-         #   v.myprint()
+            vertexs.append(Vertex(v.find('ID'), v.find('type'), v.find('label'), v.find('date'), v.find('attributes')))
 
 
 LoadedXML(fullpath('Lucas_2.xml', 'XML'))
