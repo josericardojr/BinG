@@ -1,13 +1,13 @@
 class Attributes:
     def __init__(self, name, value):
-        self.name = name
-        self.value = value
+        self.vname = name
+        self.vvalue = value
 
     def name(self):
-        return self.name
+        return self.vname
 
     def value(self):
-        return self.value
+        return self.vvalue
 
     def myprint(self):
         print('{0}: {1}'.format(self.name, self.value))
