@@ -9,7 +9,6 @@ class Edge:
         self.vsourceID = sourceID.text
         self.vtargetID = targetID.text
 
-
     def id(self):
         return self.vid
 

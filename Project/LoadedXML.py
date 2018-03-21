@@ -1,6 +1,7 @@
-from XMLReader.Loader import *
-from XMLReader.ElementsXML.Vertex import *
-from XMLReader.ElementsXML.Edge import *
+from Project.Loader import *
+from Project.ElementsXML.Vertex import *
+from Project.ElementsXML.Edge import *
+
 
 class LoadedXML:
     def __init__(self, path):
