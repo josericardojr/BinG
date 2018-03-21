@@ -1,4 +1,4 @@
-from XMLReader.ElementsXML.Attributes import *
+from Project.ElementsXML.Attributes import *
 
 
 class Vertex:
