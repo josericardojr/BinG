@@ -9,24 +9,27 @@ minRiseHappenings = Relation()
 #infos retiradas do xml
 
 #numero de hits em ordem de tipo de inimigo
-hits = [4];
+hits = range(4);
 #numero de usos de ataque em ordem de tipo de inimigo
-happenings = [4];
+happenings = range(4);
 
 #BASEAR EM TEMPO
 
 #infos estabelecidas aqui
 facts(diffLowerFactor, ("enemy1", "0.5"),
     ("enemy2", "0.4"),
-    ("enemy3", "0.3"))
+    ("enemy3", "0.3"),
+    ("enemy4", "0.3"))
 
 facts(diffRiseFactor, ("enemy1", "0.5"),
     ("enemy2", "0.4"),
-    ("enemy3", "0.3"))
+    ("enemy3", "0.3"),
+    ("enemy4", "0.3"))
 
 facts(minRiseHappenings, ("enemy1", "3"),
     ("enemy2", "4"),
-    ("enemy3", "10"))
+    ("enemy3", "10"),
+    ("enemy4", "10"))
 
 def increaseDifficulty (factor):
     x = var()
@@ -48,17 +51,39 @@ def decreaseDifficulty (factor):
         else:
             return false;
 
-xml = LoadedXML(fullpath('Lucas_2.xml', 'XML'))
-vertexs = xml.vertexs()
+def getXMLInfo():
+    xml = LoadedXML(fullpath('Lucas_5.xml', 'XML'))
+    vertexs = xml.vertexs()
 
-for v in vertexs:
-    print('id: {0}\ntype: {1}\nlabel: {2}\ndate: {3}'.format(v.id(), v.type(), v.label(), v.date()))
-    atr = v.attributes()
-    aux = 0
-    for a in atr:
-        aux = aux + 1
-        print('attributes{0} name: {1} value: {2}'.format(aux, a.name(), a.value()))
-    print('_' * 10)
+    for v in vertexs:
+        #if(v.label() == "Attacking (Enemy)"):
+        #    print('id: {0}\ntype: {1}\nlabel: {2}\ndate: {3}'.format(v.id(), v.type(), v.label(), v.date()))
+        atr = v.attributes()
+        aux = 0
+        if(v.label() == "Being Hit(Player)"):
+            if(v.attributes()[3].value() == "Straight"):
+                hits[0] += 1
+            if(v.attributes()[3].value() == "Chaser"):
+                hits[1] += 1
+            if(v.attributes()[3].value() == "Round"):
+                hits[2] += 1
+            if(v.attributes()[3].value() == "Irregular"):
+                hits[3] += 1
+
+        if(v.label() == "Attacking (Enemy)"):
+            if(v.attributes()[6].value() == "Enemy_Straight"):
+                happenings[0] += 1
+            if(v.attributes()[6].value() == "Enemy_Chaser"):
+                happenings[1] += 1
+            if(v.attributes()[6].value() == "Enemy_Round"):
+                happenings[2] += 1
+            if(v.attributes()[6].value() == "Enemy_Irregular"):
+                happenings[3] += 1
+
+        for a in atr:
+            aux = aux + 1
+               # print('attributes{0} name: {1} value: {2}'.format(aux, a.name(), a.value()))
+        #print('_' * 10)
 
 
 
