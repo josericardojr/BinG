@@ -31,26 +31,6 @@ facts(minRiseHappenings, ("enemy1", "3"),
     ("enemy3", "10"),
     ("enemy4", "10"))
 
-def increaseDifficulty (factor):
-    x = var()
-    y = var()
-    if(happenings[factor] > 0):
-        if(hits[factor] / happenings[factor] >= run(1, x, (diffRiseFactor, x, "enemy" + factor)) and
-           happenings[factor] >= run(1, y, (minRiseHappenings, y, "enemy" + factor))):
-            return true
-        else:
-            return false;
-
-def decreaseDifficulty (factor):
-    x = var()
-    y = var()
-    if(happenings[factor] > 0):
-        if(hits[factor] / happenings[factor] <= run(1, x, (diffLowerFactor, x, "enemy" + factor)) and
-           happenings[factor] >= run(1, y, (minRiseHappenings, y, "enemy" + factor))):
-            return true
-        else:
-            return false;
-
 def getXMLInfo():
     xml = LoadedXML(fullpath('Lucas_5.xml', 'XML'))
     vertexs = xml.vertexs()
@@ -84,6 +64,31 @@ def getXMLInfo():
             aux = aux + 1
                # print('attributes{0} name: {1} value: {2}'.format(aux, a.name(), a.value()))
         #print('_' * 10)
+
+
+for s in sys.argv:
+    increaseDifficulty('UNITY: arguments {0};'.format(s))
+    decreaseDifficulty('UNITY: arguments {0};'.format(s))
+    
+def increaseDifficulty (factor):
+    x = var()
+    y = var()
+    if(happenings[factor] > 0):
+        if(hits[factor] / happenings[factor] >= run(1, x, (diffRiseFactor, x, "enemy" + factor)) and
+           happenings[factor] >= run(1, y, (minRiseHappenings, y, "enemy" + factor))):
+            print("true_increase")
+        else:
+            print("false_increase")
+
+def decreaseDifficulty (factor):
+    x = var()
+    y = var()
+    if(happenings[factor] > 0):
+        if(hits[factor] / happenings[factor] <= run(1, x, (diffLowerFactor, x, "enemy" + factor)) and
+           happenings[factor] >= run(1, y, (minRiseHappenings, y, "enemy" + factor))):
+            print("true_decrease")
+        else:
+            print("false_decrease")
 
 
 
