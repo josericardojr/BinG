@@ -1,4 +1,5 @@
 from kanren import *
+import Commands as Com
 import sys
 
 
@@ -15,4 +16,4 @@ class PrologConsult:
         y = var()
         z = var()
         result = run(sys.maxsize, x, (relation, y, z, x))
-        print(result)
+        print(Com.command_feedback(result))

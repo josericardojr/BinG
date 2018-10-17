@@ -1,4 +1,5 @@
 import Loader as Loader
+import Commands as Com
 from PrologFactGenerator import *
 from PrologConsult import *
 from os.path import *
@@ -6,20 +7,20 @@ import networkx as nx
 
 string_input = ''
 run = True
-last_command = 'COMMAND_ASK_PATH'
+last_command = Com.command_ask_path()
 while run:
     print(last_command)
     string_input = input()
 
-    if string_input == 'COMMAND_QUIT':
+    if string_input == Com.command_quit():
         run = False
     elif isfile(string_input):
         run = False
     else:
-        print('err' + string_input)
+        print(Com.command_feedback('err ' + string_input))
 
-if string_input != 'COMMAND_QUIT':
-    print('loading')
+if string_input != Com.command_quit():
+    print(Com.command_feedback('loading'))
     try:
         prolog = PrologFactGenerator()
         xml = Loader.load_xml(string_input)
@@ -52,9 +53,9 @@ run = True
 
 consult = PrologConsult(prolog.facts)
 while run:
-    if string_input == 'COMMAND_QUIT':
+    if string_input == Com.command_quit():
         run = False
-    print('waiting the end COMMAND_QUIT')
+    print('waiting the end ' + Com.command_quit())
     string_input = input()
 
 print('Python Ended')
