@@ -9,17 +9,17 @@ using UnityEngine.UI;
 
 public class Consult : MonoBehaviour {
 
-    public static string KEYPATHPYTHON = "KEYPATHPYTHON", KEYFILEXML = "KEYFILEXML", COMMAND_ASK_PATH = "COMMAND_ASK_PATH", COMMAND_REPEAT = "COMMAND_REPEAT", COMMAND_QUIT = "COMMAND_QUIT";
+    public static string COMMAND_ASK_PATH = "COMMAND_ASK_PATH";
+
+    public static string COMMAND_REPEAT = "COMMAND_REPEAT", COMMAND_QUIT = "COMMAND_QUIT", COMMAND_FEEDBACK = "COMMAND_FEEDBACK", COMMAND_CONSULT = "COMMAND_CONSULT";
 
     private static string KEY_NO_MSG = "KEY_NO_MSG";
 
-    private static string DATA_STANDARD_PATH = "DATA_STANDARD_PATH";
+    private static char charSpliter = ';';
 
     private Process process;
 
     private StreamWriter sortStreamWriter;
-
-    private Thread thread, threadAnwser;
 
     [SerializeField]
     private InputField inputMsg;
@@ -28,26 +28,24 @@ public class Consult : MonoBehaviour {
     private Text feedback;
 
     [SerializeField]
-    private string msg, lastPythonMsg, awnserMsg;
+    private string msg, awnserMsg;
 
-    private string standardPath;
+    private string standardPathXML, lastPythonMsg, feedbackGiven;
 
     private int count;
 
-    public bool Run { get; set; }
+    [SerializeField]
+    public bool run;
 
-    private bool startedThread;
+    private bool startedThread, send;
 
     private void Start()
     {
+        count = 0;
         msg = "";
-
-        standardPath = PlayerPrefs.GetString(DATA_STANDARD_PATH);
-        lastPythonMsg = awnserMsg = KEY_NO_MSG;
-#if UNITY_EDITOR
-        PlayerPrefs.SetString(DATA_STANDARD_PATH, @"D:\Documentos\BinGTool\FactGenerator\info.xml"); 
-#endif
-        StartThreadUI();
+        feedbackGiven = "";
+        standardPathXML = PlayerPrefs.GetString(Config.KEY_PATH_XML);
+        awnserMsg = KEY_NO_MSG;
     }
 
     private void Update()
@@ -57,13 +55,18 @@ public class Consult : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
-        SendMsgToPython(COMMAND_QUIT);
+        if (sortStreamWriter != null)
+        {
+            SendMsgToPython(COMMAND_QUIT);
+        }
         Stop();
     }
 
-    private void StartThreadUI()
+    public void StartThreadUI()
     {
-        StartThread(@"D:\Documentos\BinGTool\FactGenerator\Data.py");
+        string p = Directory.GetCurrentDirectory();
+        p += @"\FactGenerator\Data.py";
+        StartThread(p);
     }
 
     private void StartThread(string fullFilename)
@@ -71,24 +74,14 @@ public class Consult : MonoBehaviour {
         if (!startedThread)
         {
             startedThread = true;
-            Run = true;
-            thread = new Thread(() => GetInstruction(fullFilename, PythonTools.GetPythonPath()));
-            thread.Start();
+            run = true;
+            GetInstruction(fullFilename, PythonTools.GetPythonPath());
         }
     }
 
     public void Stop()
     {
-        Run = false;
-        if (thread != null)
-        {
-            thread.Join();
-        }
-
-        if (threadAnwser != null)
-        {
-            threadAnwser.Join();
-        }
+        run = false;
     }
 
     public void SendMsg()
@@ -104,6 +97,7 @@ public class Consult : MonoBehaviour {
     public void GetInstruction(string fullFilename, string pathPythonEXE)
     {
         UnityEngine.Debug.Log("Start GetInstruction");
+        AddText("Loading Python");
         try
         {
             if (!File.Exists(fullFilename))
@@ -120,9 +114,6 @@ public class Consult : MonoBehaviour {
 
             //print("fullFilename: " + fullFilename);
             //print("pathPythonEXE: " + pathPythonEXE);
-
-            threadAnwser = new Thread(AnaLastPythonMsg);
-            threadAnwser.Start();
 
             process = new Process
             {
@@ -150,7 +141,7 @@ public class Consult : MonoBehaviour {
             }
             catch (System.Exception e)
             {
-                AddText("sortStreamWriter: " + e.Message);
+                AddText("err sortStreamWriter: " + e.Message);
             }
 
 
@@ -161,40 +152,30 @@ public class Consult : MonoBehaviour {
         }
         catch (System.Exception e)
         {
-            AddText(e.Message);
+            AddText("err GetInstruction: " + e.Message);
         }
         UnityEngine.Debug.Log("End GetInstruction");
     }
 
     private void Process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
     {
-        UnityEngine.Debug.Log(e.Data);
+        UnityEngine.Debug.Log("Process_ErrorDataReceived: " + e.Data);
     }
 
     private void AnaLastPythonMsg()
     {
-        UnityEngine.Debug.Log("Start AnaLastPythonMsg");
-
-        while (Run)
+        print("Start AnaLastPythonMsg");
+        while (run)
         {
-            if (!AuthomatichAwn(lastPythonMsg))
-            {
-                UnityEngine.Debug.Log("have msg: " + lastPythonMsg);
-                if (!awnserMsg.Contains(KEY_NO_MSG))
-                {
-                    SendMsgToPython(awnserMsg);
-                    awnserMsg = KEY_NO_MSG;
-                }
-            }
+            AuthomatichAwn(lastPythonMsg);
         }
-        UnityEngine.Debug.Log("End AnaLastPythonMsg");
+        print("End AnaLastPythonMsg");
     }
 
     private bool AuthomatichAwn(string command)
     {
         if (command.Contains(KEY_NO_MSG))
         {
-            UnityEngine.Debug.Log("AuthomatichAwn KEY_NO_MSG: " + command);
             return true;
         }
         else if (command.Contains(COMMAND_QUIT))
@@ -202,9 +183,32 @@ public class Consult : MonoBehaviour {
             SendMsgToPython(COMMAND_QUIT);
             return true;
         }
-        else
+        else if (command.Contains(COMMAND_ASK_PATH))
         {
-            SendMsgToPython(standardPath);            
+            SendMsgToPython(standardPathXML);
+            return true;
+        }
+        else if (command.Contains(COMMAND_FEEDBACK))
+        {
+            string[] splited = command.Split(charSpliter);
+            if (splited.Length == 2)
+            {
+                if (!feedbackGiven.Contains(splited[splited.Length-1]))
+                {
+                    feedbackGiven = "Python: " + splited[splited.Length - 1];
+                    AddText(feedbackGiven); 
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.Log("err " + COMMAND_FEEDBACK + command);
+            }
+            return true;
+        }
+        else if (command.Contains(COMMAND_CONSULT))
+        {
+            SendMsgToPython(COMMAND_CONSULT);
+            return true;
         }
 
         UnityEngine.Debug.Log("AuthomatichAwn return: " + command);
@@ -214,14 +218,22 @@ public class Consult : MonoBehaviour {
 
     private void SendMsgToPython(string s)
     {
-        UnityEngine.Debug.Log("send: " + s);
-        sortStreamWriter.WriteLine(s);
+        if (!send)
+        {
+            send = true;
+            sortStreamWriter.WriteLine(s);
+            UnityEngine.Debug.Log(count + ": " + "Send: " + s);
+        }
     }
 
     private void P_OutputDataReceived(object sender, DataReceivedEventArgs e)
     {
-        AddText("Python: " + e.Data);
-        lastPythonMsg = e.Data;
+        send = false;
+        UnityEngine.Debug.Log("__________");
+        count++;
+        lastPythonMsg = count + ": " + e.Data;
+        UnityEngine.Debug.Log(lastPythonMsg);
+        AuthomatichAwn(lastPythonMsg); 
     }
 
     private void AddText(object s)

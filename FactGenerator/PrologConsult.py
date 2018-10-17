@@ -16,4 +16,4 @@ class PrologConsult:
         y = var()
         z = var()
         result = run(sys.maxsize, x, (relation, y, z, x))
-        print(Com.command_feedback(result))
+        print(Com.command_feedback(''.join(result)))

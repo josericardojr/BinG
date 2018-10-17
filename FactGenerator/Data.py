@@ -56,7 +56,7 @@ while run:
     if string_input == Com.command_quit():
         run = False
     print('waiting the end ' + Com.command_quit())
-    string_input = input()
+    
 
 print('Python Ended')
 

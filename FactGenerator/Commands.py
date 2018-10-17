@@ -12,3 +12,7 @@ def command_quit():
 
 def command_feedback(msg):
     return 'COMMAND_FEEDBACK;' + msg
+
+
+def command_consult():
+    return 'COMMAND_CONSULT'
