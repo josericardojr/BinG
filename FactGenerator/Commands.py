@@ -16,3 +16,7 @@ def command_feedback(msg):
 
 def command_consult():
     return 'COMMAND_CONSULT'
+
+
+def command_wait():
+    return 'COMMAND_WAIT'
