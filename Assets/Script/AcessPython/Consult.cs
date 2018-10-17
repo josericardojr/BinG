@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Consult : MonoBehaviour {
+public class Consult : MonoBehaviour
+{
 
     public static string COMMAND_ASK_PATH = "COMMAND_ASK_PATH";
 
@@ -28,7 +29,7 @@ public class Consult : MonoBehaviour {
     private Text feedback;
 
     [SerializeField]
-    private string msg, awnserMsg;
+    private string msg;
 
     private string standardPathXML, lastPythonMsg, feedbackGiven;
 
@@ -37,7 +38,7 @@ public class Consult : MonoBehaviour {
     [SerializeField]
     public bool run;
 
-    private bool startedThread, send;
+    private bool startedThread;
 
     private void Start()
     {
@@ -45,7 +46,6 @@ public class Consult : MonoBehaviour {
         msg = "";
         feedbackGiven = "";
         standardPathXML = PlayerPrefs.GetString(Config.KEY_PATH_XML);
-        awnserMsg = KEY_NO_MSG;
     }
 
     private void Update()
@@ -84,13 +84,11 @@ public class Consult : MonoBehaviour {
         run = false;
     }
 
-    public void SendMsg()
+    public void SendMsgFromUI()
     {
-        //todo controll this
-        if (true)
+        if (sortStreamWriter != null)
         {
-            awnserMsg = inputMsg.text;
-            inputMsg.text = KEY_NO_MSG;
+            SendMsgToPython(inputMsg.text); 
         }
     }
 
@@ -193,10 +191,10 @@ public class Consult : MonoBehaviour {
             string[] splited = command.Split(charSpliter);
             if (splited.Length == 2)
             {
-                if (!feedbackGiven.Contains(splited[splited.Length-1]))
+                if (!feedbackGiven.Contains(splited[splited.Length - 1]))
                 {
                     feedbackGiven = "Python: " + splited[splited.Length - 1];
-                    AddText(feedbackGiven); 
+                    AddText(feedbackGiven);
                 }
             }
             else
@@ -218,22 +216,17 @@ public class Consult : MonoBehaviour {
 
     private void SendMsgToPython(string s)
     {
-        if (!send)
-        {
-            send = true;
-            sortStreamWriter.WriteLine(s);
-            UnityEngine.Debug.Log(count + ": " + "Send: " + s);
-        }
+        sortStreamWriter.WriteLine(s);
+        UnityEngine.Debug.Log(count + ": " + "Send: " + s);
     }
 
     private void P_OutputDataReceived(object sender, DataReceivedEventArgs e)
     {
-        send = false;
         UnityEngine.Debug.Log("__________");
         count++;
-        lastPythonMsg = count + ": " + e.Data;
+        lastPythonMsg = count + ": Received:" + e.Data;
         UnityEngine.Debug.Log(lastPythonMsg);
-        AuthomatichAwn(lastPythonMsg); 
+        AuthomatichAwn(lastPythonMsg);
     }
 
     private void AddText(object s)
