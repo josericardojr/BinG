@@ -9,21 +9,28 @@ using UnityEngine.UI;
 
 public class Consult : MonoBehaviour {
 
-    public static string KEYPATHPYTHON = "KEYPATHPYTHON", KEYFILEXML = "KEYFILEXML";
+    public static string KEYPATHPYTHON = "KEYPATHPYTHON", KEYFILEXML = "KEYFILEXML", COMMAND_ASK_PATH = "COMMAND_ASK_PATH", COMMAND_REPEAT = "COMMAND_REPEAT", COMMAND_QUIT = "COMMAND_QUIT";
+
+    private static string KEY_NO_MSG = "KEY_NO_MSG";
+
+    private static string DATA_STANDARD_PATH = "DATA_STANDARD_PATH";
 
     private Process process;
 
     private StreamWriter sortStreamWriter;
 
-    private Thread thread;
+    private Thread thread, threadAnwser;
 
     [SerializeField]
-    private InputField inputPath,inputArgs;
+    private InputField inputMsg;
 
     [SerializeField]
     private Text feedback;
 
-    private string msg;
+    [SerializeField]
+    private string msg, lastPythonMsg, awnserMsg;
+
+    private string standardPath;
 
     private int count;
 
@@ -34,7 +41,13 @@ public class Consult : MonoBehaviour {
     private void Start()
     {
         msg = "";
-        inputPath.text = @"D:\Documentos\BinGTool\FactGenerator\Data.py";
+
+        standardPath = PlayerPrefs.GetString(DATA_STANDARD_PATH);
+        lastPythonMsg = awnserMsg = KEY_NO_MSG;
+#if UNITY_EDITOR
+        PlayerPrefs.SetString(DATA_STANDARD_PATH, @"D:\Documentos\BinGTool\FactGenerator\info.xml"); 
+#endif
+        StartThreadUI();
     }
 
     private void Update()
@@ -44,21 +57,22 @@ public class Consult : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
+        SendMsgToPython(COMMAND_QUIT);
         Stop();
     }
 
-    public void StartThreadUI()
+    private void StartThreadUI()
     {
-        StartThread(inputPath.text, inputArgs.text);
+        StartThread(@"D:\Documentos\BinGTool\FactGenerator\Data.py");
     }
 
-    public void StartThread(string fullFilename, string args)
+    private void StartThread(string fullFilename)
     {
         if (!startedThread)
         {
             startedThread = true;
             Run = true;
-            thread = new Thread(() => GetInstruction(fullFilename, args, PythonTools.GetPythonPath()));
+            thread = new Thread(() => GetInstruction(fullFilename, PythonTools.GetPythonPath()));
             thread.Start();
         }
     }
@@ -70,11 +84,26 @@ public class Consult : MonoBehaviour {
         {
             thread.Join();
         }
+
+        if (threadAnwser != null)
+        {
+            threadAnwser.Join();
+        }
     }
 
-    public void GetInstruction(string fullFilename, string args, string pathPythonEXE)
+    public void SendMsg()
     {
-        AddText("Start");
+        //todo controll this
+        if (true)
+        {
+            awnserMsg = inputMsg.text;
+            inputMsg.text = KEY_NO_MSG;
+        }
+    }
+
+    public void GetInstruction(string fullFilename, string pathPythonEXE)
+    {
+        UnityEngine.Debug.Log("Start GetInstruction");
         try
         {
             if (!File.Exists(fullFilename))
@@ -82,8 +111,6 @@ public class Consult : MonoBehaviour {
                 AddText(".py dont exists: " + fullFilename);
                 return;
             }
-
-            fullFilename += " " + args;
 
             if (!File.Exists(pathPythonEXE))
             {
@@ -93,6 +120,9 @@ public class Consult : MonoBehaviour {
 
             //print("fullFilename: " + fullFilename);
             //print("pathPythonEXE: " + pathPythonEXE);
+
+            threadAnwser = new Thread(AnaLastPythonMsg);
+            threadAnwser.Start();
 
             process = new Process
             {
@@ -133,7 +163,7 @@ public class Consult : MonoBehaviour {
         {
             AddText(e.Message);
         }
-        AddText("End");
+        UnityEngine.Debug.Log("End GetInstruction");
     }
 
     private void Process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
@@ -141,27 +171,60 @@ public class Consult : MonoBehaviour {
         UnityEngine.Debug.Log(e.Data);
     }
 
-    private void P_OutputDataReceived(object sender, DataReceivedEventArgs e)
+    private void AnaLastPythonMsg()
     {
-        AddText("Python: " + e.Data);
+        UnityEngine.Debug.Log("Start AnaLastPythonMsg");
 
-        if (e.Data.Contains("nome do arquivo xml: "))
+        while (Run)
         {
-            UnityEngine.Debug.Log("add nome");
-            sortStreamWriter.WriteLine("info.xml");
+            if (!AuthomatichAwn(lastPythonMsg))
+            {
+                UnityEngine.Debug.Log("have msg: " + lastPythonMsg);
+                if (!awnserMsg.Contains(KEY_NO_MSG))
+                {
+                    SendMsgToPython(awnserMsg);
+                    awnserMsg = KEY_NO_MSG;
+                }
+            }
         }
-        else if (e.Data.Contains("nome do caminho do arquivo xml: "))
+        UnityEngine.Debug.Log("End AnaLastPythonMsg");
+    }
+
+    private bool AuthomatichAwn(string command)
+    {
+        if (command.Contains(KEY_NO_MSG))
         {
-            UnityEngine.Debug.Log("add path");
-            sortStreamWriter.WriteLine(@"D:\Documentos\BinGTool\FactGenerator");
+            UnityEngine.Debug.Log("AuthomatichAwn KEY_NO_MSG: " + command);
+            return true;
+        }
+        else if (command.Contains(COMMAND_QUIT))
+        {
+            SendMsgToPython(COMMAND_QUIT);
+            return true;
         }
         else
         {
-            //sortStreamWriter.WriteLine("oi");
+            SendMsgToPython(standardPath);            
         }
+
+        UnityEngine.Debug.Log("AuthomatichAwn return: " + command);
+
+        return false;
     }
 
-    private void AddText(string s)
+    private void SendMsgToPython(string s)
+    {
+        UnityEngine.Debug.Log("send: " + s);
+        sortStreamWriter.WriteLine(s);
+    }
+
+    private void P_OutputDataReceived(object sender, DataReceivedEventArgs e)
+    {
+        AddText("Python: " + e.Data);
+        lastPythonMsg = e.Data;
+    }
+
+    private void AddText(object s)
     {
         msg += s + "\n";
     }
