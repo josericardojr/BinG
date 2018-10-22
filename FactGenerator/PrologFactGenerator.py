@@ -19,8 +19,5 @@ class PrologFactGenerator:
         self.file.write(s + '\n')
         self.facts.append(PrologFact([first, second, third]))
 
-    def close_file(self):
-        self.file.close()
-
     def facts(self, index):
         return self.facts[index]

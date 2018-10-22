@@ -7,8 +7,8 @@ run = True
 last_command = Com.command_ask_path()
 while run:
     print(last_command)
-    string_input = input()
-
+    #string_input = input()
+    string_input = 'D:\Documentos\BinGTool\FactGenerator\info2.xml'
     if string_input in Com.command_quit():
         run = False
     elif isfile(string_input):
