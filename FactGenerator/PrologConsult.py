@@ -1,10 +1,28 @@
-from kanren import *
+import subprocess
 import sys
 import Loader as Loader
-import networkx as nx
 import Commands as Com
 from PrologFactGenerator import *
 from PrologActivityRegister import *
+
+
+def install(name):
+    print('installing ' + name)
+    subprocess.call(['pip', 'install', name])
+
+
+try:
+    from kanren import *
+except ImportError:
+    install('kanren')
+    from kanren import *
+
+try:
+    import networkx as nx
+except ImportError:
+    install('networkx')
+    import networkx as nx
+
 
 
 class PrologConsult:
