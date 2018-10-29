@@ -25,7 +25,6 @@ except ImportError:
     import networkx as nx
 
 
-
 class PrologConsult:
     def __init__(self, path):
         prolog = PrologFactGenerator()
@@ -41,7 +40,7 @@ class PrologConsult:
             G.add_edge(e_source, e_target)
 
         activity_founded = {}
-        vs= xml.findall('vertices/vertex')
+        vs = xml.findall('vertices/vertex')
 
         vertexs = {}
         for vertex in vs:
@@ -54,7 +53,7 @@ class PrologConsult:
                 for second_vertex in G[name_target]:
                     name_target = source_to_target_name(second_vertex)
                     if name_target in G.nodes:
-                       for third_vertex in G[name_target]:
+                        for third_vertex in G[name_target]:
                             prolog.setup_fact(first_vertex, second_vertex, third_vertex)
 
             if vertexs[vertex].me.find('type').text in 'Activity':
