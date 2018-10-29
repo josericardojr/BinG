@@ -1,6 +1,6 @@
 from os.path import *
 from Functions import *
-from PrologFact import *
+from Prolog.PrologFact import *
 
 
 class PrologFactGenerator:

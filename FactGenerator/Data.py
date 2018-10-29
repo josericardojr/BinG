@@ -1,4 +1,4 @@
-from PrologConsult import *
+from Prolog.PrologConsult import *
 from os.path import *
 import Commands as Com
 

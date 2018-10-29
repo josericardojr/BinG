@@ -2,8 +2,9 @@ import subprocess
 import sys
 import Loader as Loader
 import Commands as Com
-from PrologFactGenerator import *
-from PrologActivityRegister import *
+from XML_Data.Vertex import *
+from Prolog.PrologFactGenerator import *
+from Prolog.PrologActivityRegister import *
 
 
 def install(name):
@@ -40,26 +41,34 @@ class PrologConsult:
             G.add_edge(e_source, e_target)
 
         activity_founded = {}
-        vertexs = xml.findall('vertices/vertex')
+        vs= xml.findall('vertices/vertex')
+
+        vertexs = {}
+        for vertex in vs:
+            vertexs[vertex.find('ID').text] = Vertex(vertex)
+
         for vertex in vertexs:
-            name_target = target_name(vertex.find('ID').text)
+            name_target = target_name(vertexs[vertex].me.find('ID').text)
             if name_target in G.nodes:
                 first_vertex = target_to_source_name(name_target)
                 for second_vertex in G[name_target]:
                     name_target = source_to_target_name(second_vertex)
-                    #if name_target in G.nodes:
-                       #for third_vertex in G[name_target]:
-                            #prolog.setup_fact(first_vertex, second_vertex, third_vertex)
+                    if name_target in G.nodes:
+                       for third_vertex in G[name_target]:
+                            prolog.setup_fact(first_vertex, second_vertex, third_vertex)
 
-            if vertex.find('type').text in 'Activity':
-                activity_name = vertex.find('label').text
+            if vertexs[vertex].me.find('type').text in 'Activity':
+                activity_name = vertexs[vertex].me.find('label').text
+
                 if activity_name not in activity_founded:
                     activity_founded[activity_name] = PrologActivityRegister(activity_name)
-                name_vertex = source_name(vertex.find('ID').text)
+
+                name_vertex = source_name(vertexs[vertex].me.find('ID').text)
                 if name_vertex in G.nodes:
                     for target in G[name_vertex]:
-                        activity_founded[activity_name].add_item(clean_name(target))
-                print('_' * 10)
+                        if vertexs[clean_name(target)].me.find('type').text not in 'Activity':
+                            activity_founded[activity_name].add_item(clean_name(target))
+                            print(activity_name + '<>'+ vertexs[vertex].me.find('ID').text + ': ' + clean_name(target))
 
         self.facts = prolog.facts
 
