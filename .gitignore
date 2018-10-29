@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+FactGenerator/.idea
 
 # Visual Studio cache directory
 .vs/
