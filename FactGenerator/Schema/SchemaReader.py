@@ -21,7 +21,7 @@ xml = Loader.load_xml(string_input).getroot()
 
 for fact in xml.findall(key_acess_fact):
     schemaFact.SchemaFact(fact)
-
+print('<>' * 10)
 for rule in xml.findall(key_acess_rule):
     schemaRule.SchemaRule(rule)
 
