@@ -44,18 +44,6 @@ class PrologConsult:
 
         vertexs = {}
         for vertex in vs:
-            vertexs[vertex.find('ID').text] = Vertex(vertex)
-
-        for vertex in vertexs:
-            name_target = target_name(vertexs[vertex].me.find('ID').text)
-            if name_target in G.nodes:
-                first_vertex = target_to_source_name(name_target)
-                for second_vertex in G[name_target]:
-                    name_target = source_to_target_name(second_vertex)
-                    if name_target in G.nodes:
-                        for third_vertex in G[name_target]:
-                            prolog.setup_fact(first_vertex, second_vertex, third_vertex)
-
             if vertexs[vertex].me.find('type').text in 'Activity':
                 activity_name = vertexs[vertex].me.find('label').text
 
@@ -68,6 +56,18 @@ class PrologConsult:
                         if vertexs[clean_name(target)].me.find('type').text not in 'Activity':
                             activity_founded[activity_name].add_item(clean_name(target))
                             print(activity_name + '<>'+ vertexs[vertex].me.find('ID').text + ': ' + clean_name(target))
+            vertexs[vertex.find('ID').text] = Vertex(vertex)
+        '''for vertex in vertexs:
+            name_target = target_name(vertexs[vertex].me.find('ID').text)
+            if name_target in G.nodes:
+                first_vertex = target_to_source_name(name_target)
+                for second_vertex in G[name_target]:
+                    name_target = source_to_target_name(second_vertex)
+                    if name_target in G.nodes:
+                        for third_vertex in G[name_target]:
+                            prolog.setup_fact(first_vertex, second_vertex, third_vertex)
+
+        '''
 
         self.facts = prolog.facts
 

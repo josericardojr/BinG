@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema name = "name">
+     <facts>
+          <fact name="player">
+               <attrib name="name" filter="tag" value="player"/>
+          </fact> 
+          <fact name="enemy">
+               <attrib name="name" filter="tag" value="enemy"/>
+          </fact> 
+     </facts>
+     <rules>
+          <rule name="playerHit">
+               <inputs>
+                    <input name="X"/>
+                    <input name="Y"/>
+               </inputs>
+               <facts>
+                    <fact name="player">
+                         <input name="X"/>
+                    </fact>
+                    <fact name="enemy">
+                    <input name="Y"/>
+                    </fact>
+               </facts>
+          </rule>
+   </rules>
+</schema>
