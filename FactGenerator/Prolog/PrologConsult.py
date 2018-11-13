@@ -39,6 +39,8 @@ class PrologConsult:
             e_target = target_name(edge.find('targetID').text)
             G.add_edge(e_source, e_target)
 
+        nx.write_graphml(G, 'info.graphml ')
+
         activity_founded = {}
         vs = xml.findall('vertices/vertex')
 
