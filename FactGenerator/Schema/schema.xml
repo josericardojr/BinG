@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema name = "name">
      <facts>
-          <fact name="player">
-               <attrib name="name" filter="tag" value="player"/>
+          <fact name="f_player">
+               <attrib name="player_label" filter="label" value="Player"/>
           </fact> 
-          <fact name="enemy">
-               <attrib name="name" filter="tag" value="enemy"/>
+          <fact name="f_enemy">
+               <attrib name="round_label" filter="label" value="Round"/>
           </fact> 
      </facts>
      <rules>
@@ -15,10 +15,10 @@
                     <input name="Y"/>
                </inputs>
                <facts>
-                    <fact name="player">
+                    <fact name="f_player">
                          <input name="X"/>
                     </fact>
-                    <fact name="enemy">
+                    <fact name="f_enemy">
                     <input name="Y"/>
                     </fact>
                </facts>
