@@ -11,10 +11,3 @@ class SchemaFact:
         self.att_name = att['name']
         self.att_filter = att['filter']
         self.att_value = att['value']
-
-        msg = 'fact: ' + self.name + '\n'
-        msg += 'name: ' + self.att_name + '\n'
-        msg += 'filter: ' + self.att_filter + '\n'
-        msg += 'value: ' + self.att_value + '\n'
-        msg += '_' * 10
-        print(msg)
