@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema name = "name">
-     <facts>
-          <fact name="f_player">
-               <attrib name="label" filter="Player" value="player_label"/>
-          </fact> 
-          <fact name="f_enemy">
-               <attrib name="label" filter="Round" value="round_label"/>
-          </fact> 
+	<facts>
+		<fact name="f_player">
+		   <attrib name="label" filter="Player" value="player_label"/>
+		</fact> 
+		<fact name="f_round">
+			<attrib name="label" filter="Round" value="round_label"/>
+		</fact>  
+		<fact name="vertexType"> 
+			<attrib name="type"/>
+		</fact> 
      </facts>
      <rules>
           <rule name="playerHit">
@@ -18,7 +21,7 @@
                     <fact name="f_player">
                          <input name="X"/>
                     </fact>
-                    <fact name="f_enemy">
+                    <fact name="f_round">
                     <input name="Y"/>
                     </fact>
                </facts>

@@ -44,7 +44,7 @@ class PrologConsult:
         for v in vs:
             self.vertexs[v.find('ID').text] = Vertex(v)
 
-    def set_fact(self, fact):
+    def set_fact(self, f):
         for v in self.vertexs:
-            if self.vertexs[v].me.find(fact.att_name).text in fact.att_filter:
-                self.fact_data.setup_fact(fact.name, self.vertexs[v].me.find(fact.att_name).text)
+            if f.checkFact(self.vertexs[v]):
+                self.fact_data.setup_fact(f.name, self.vertexs[v].me.find(f.att_name).text)

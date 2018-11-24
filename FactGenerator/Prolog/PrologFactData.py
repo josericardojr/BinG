@@ -6,13 +6,14 @@ from Prolog.PrologFact import *
 class PrologFactData:
     def __init__(self):
         path = dirname(realpath(__file__))
-        file_path = path + '/facts.txt'
+        file_path = path + '\\facts.txt'
+        #print(file_path)
         self.facts = []
         self.file = open(file_path, 'w+')
 
     def setup_fact(self, name, value):
         s = 'fact(' + name + ',' + value + ')'
-        print(s)
+        #print(s)
         self.file.write(s + '\n')
         self.facts.append(PrologFact([name, value]))
 
