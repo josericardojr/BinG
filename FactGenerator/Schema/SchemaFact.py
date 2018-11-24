@@ -20,4 +20,4 @@ class SchemaFact:
         if 'value' in att:
             self.att_value = att['value']
         else:
-            self.att_value = ''
+            self.att_value = self.att_name

@@ -2,13 +2,16 @@
 <schema name = "name">
 	<facts>
 		<fact name="f_player">
-		   <attrib name="label" filter="Player" value="player_label"/>
+		   <attrib name="label" filter="Player" value="label"/>
 		</fact> 
 		<fact name="f_round">
-			<attrib name="label" filter="Round" value="round_label"/>
+			<attrib name="label" filter="Round" value="label"/>
 		</fact>  
 		<fact name="vertexType"> 
 			<attrib name="type"/>
+		</fact>  
+		<fact name="type"> 
+			<attrib name="type" filter="Agent" value="label" />
 		</fact> 
      </facts>
      <rules>

@@ -11,11 +11,11 @@ class PrologFactData:
         self.facts = []
         self.file = open(file_path, 'w+')
 
-    def setup_fact(self, name, value):
-        s = 'fact(' + name + ',' + value + ')'
+    def setup_fact(self, name, value1, value2):
+        s = name + '(' + value1 + ',' + value2 + ')'
         #print(s)
         self.file.write(s + '\n')
-        self.facts.append(PrologFact([name, value]))
+        self.facts.append(PrologFact([name, value1, value2]))
 
     def close_file(self):
         self.file.close()
