@@ -8,14 +8,12 @@ class SchemaReader:
         key_acess_fact = 'facts/fact'
         key_acess_rule = 'rules/rule'
 
-        facts = {}
+        self.facts = []
+        self.rules = []
 
         xml = Loader.load_xml(path).getroot()
 
         for fact in xml.findall(key_acess_fact):
-            schemaFact.SchemaFact(fact)
+            self.facts.append(schemaFact.SchemaFact(fact))
         for rule in xml.findall(key_acess_rule):
-            schemaRule.SchemaRule(rule)
-
-
-
+            self.rules.append(schemaRule.SchemaRule(rule))

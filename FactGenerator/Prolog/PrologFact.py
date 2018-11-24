@@ -3,4 +3,4 @@ class PrologFact:
         self.facts = facts
 
     def get_facts(self):
-        return self.facts[0], self.facts[1], self.facts[2]
+        return self.facts[0], self.facts[1]

@@ -29,6 +29,10 @@ while run:
 consult = PrologConsult(path_fact)
 schema = SchemaReader(path_schema)
 
+for fact in schema.facts:
+    consult.set_fact(fact)
+
+consult.fact_data.close_file()
 
 print('Python Ended')
 

@@ -2,10 +2,10 @@
 <schema name = "name">
      <facts>
           <fact name="f_player">
-               <attrib name="player_label" filter="label" value="Player"/>
+               <attrib name="label" filter="Player" value="player_label"/>
           </fact> 
           <fact name="f_enemy">
-               <attrib name="round_label" filter="label" value="Round"/>
+               <attrib name="label" filter="Round" value="round_label"/>
           </fact> 
      </facts>
      <rules>

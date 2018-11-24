@@ -1,8 +1,9 @@
 import subprocess
-from Functions import *
 import Loader as Loader
 from XML_Data.Vertex import *
 from Functions import *
+from  Prolog.PrologFactData import *
+from Schema.SchemaFact import *
 
 def install(name):
     print('installing ' + name)
@@ -25,7 +26,7 @@ except ImportError:
 class PrologConsult:
     def __init__(self, path):
         xml = Loader.load_xml(path)
-
+        self.fact_data = PrologFactData()
         G = nx.Graph()
 
         edges = xml.findall('edges/edge')
@@ -38,10 +39,12 @@ class PrologConsult:
         nx.write_graphml(G, 'info.graphml ')
 
         vs = xml.findall('vertices/vertex')
-        vertexs = {}
+        self.vertexs = {}
+
         for v in vs:
-            vertexs[v.find('ID').text] = Vertex(v)
-            print('_' * 10)
-            print(vertexs[v.find('ID').text].me.find('label').text)
-            for n in G[v.find('ID').text]:
-                print(source_name(n))
+            self.vertexs[v.find('ID').text] = Vertex(v)
+
+    def set_fact(self, fact):
+        for v in self.vertexs:
+            if self.vertexs[v].me.find(fact.att_name).text in fact.att_filter:
+                self.fact_data.setup_fact(fact.name, self.vertexs[v].me.find(fact.att_name).text)
