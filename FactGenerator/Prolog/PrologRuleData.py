@@ -35,7 +35,7 @@ class PrologRuleData:
                 s += ','
 
         s += ').'
-        print(s)
+        #print(s)
         self.file.write(s + '\n')
         self.rules.append(PrologRule(s))
 
