@@ -3,6 +3,7 @@ import Loader as Loader
 from XML_Data.Vertex import *
 from Functions import *
 from  Prolog.PrologFactData import *
+from  Prolog.PrologRuleData import *
 from Schema.SchemaFact import *
 
 def install(name):
@@ -27,6 +28,7 @@ class PrologConsult:
     def __init__(self, path):
         xml = Loader.load_xml(path)
         self.fact_data = PrologFactData()
+        self.rule_data = PrologRuleData()
         G = nx.Graph()
 
         edges = xml.findall('edges/edge')
@@ -48,3 +50,6 @@ class PrologConsult:
         for v in self.vertexs:
             if f.checkFact(self.vertexs[v]):
                 self.fact_data.setup_fact(f.name, self.vertexs[v].ID, self.vertexs[v].get_text(f.att_value))
+
+    def set_rule(self, r):
+        self.rule_data.setup_rule(r)

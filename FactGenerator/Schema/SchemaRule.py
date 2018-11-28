@@ -2,11 +2,11 @@ from xml.etree import ElementTree
 
 
 class SchemaRule:
-    def __init__(self, rule):
+    def __init__(self, rules):
 
-        self.name = rule.attrib['name']
+        self.rule_name = rules.attrib['name']
 
-        rule_inputs = rule.find('inputs')
+        rule_inputs = rules.find('inputs')
 
         inputs = {}
 
@@ -18,8 +18,13 @@ class SchemaRule:
 
         self.inputs = inputs
 
-        rule_facts = rule.find('facts')
+        rule_facts = rules.find('facts')
+
         facts = {}
+
+        self.fact_name = rule_facts.attrib['name']
 
         for f in rule_facts:
             facts[f.attrib['name']] = f.find('input').attrib['name']
+
+        self.facts = facts

@@ -1,6 +1,6 @@
 from os.path import *
 from Functions import *
-from Prolog.PrologFact import *
+from Prolog.PrologRule import *
 
 
 class PrologFactData:
@@ -8,17 +8,17 @@ class PrologFactData:
         path = dirname(realpath(__file__))
         file_path = path + '\\facts.txt'
         #print(file_path)
-        self.facts = []
+        self.rules = []
         self.file = open(file_path, 'w+')
 
     def setup_fact(self, name, value1, value2):
         s = name + '(' + value1 + ',' + value2 + ')'
         #print(s)
         self.file.write(s + '\n')
-        self.facts.append(PrologFact([name, value1, value2]))
+        self.rules.append(PrologRule([name, value1, value2]))
 
     def close_file(self):
         self.file.close()
 
     def fact(self, index):
-        return self.facts[index]
+        return self.rules[index]

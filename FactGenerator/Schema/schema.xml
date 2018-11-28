@@ -15,17 +15,34 @@
 		</fact> 
      </facts>
      <rules>
-          <rule name="playerHit">
+            <rule name="playerHit">
                <inputs>
                     <input name="X"/>
                     <input name="Y"/>
                </inputs>
-               <facts>
+               <facts name="facts_name">
                     <fact name="f_player">
-                         <input name="X"/>
+                        <input name="X"/>
                     </fact>
                     <fact name="f_round">
-                    <input name="Y"/>
+                        <input name="Y"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="Rule_2">
+               <inputs>
+                    <input name="1"/>
+                    <input name="2"/>
+               </inputs>
+               <facts name="facts_name_rule_2">
+                    <fact name="f_p1">
+                        <input name="4"/>
+                    </fact>
+                    <fact name="f_r2">
+                        <input name="3"/>
+                    </fact>
+                    <fact name=";)">
+                        <input name="mais de dois fatos"/>
                     </fact>
                </facts>
           </rule>

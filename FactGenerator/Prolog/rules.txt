@@ -1,0 +1,2 @@
+playerHit(X,Y):-facts_name(X,Y).
+Rule_2(1,2):-facts_name_rule_2(4,3,mais de dois fatos).
