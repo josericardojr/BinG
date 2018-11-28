@@ -1,5 +1,6 @@
 from Prolog.PrologConsult import *
 from Schema.SchemaReader import *
+from ReaderXML.ReaderXML import *
 from os.path import *
 import Commands as Com
 import sys
@@ -19,11 +20,12 @@ for arg in sys.argv:
         path_fact = 'C:\\Users\\nasci\\Documents\\BinGTool\\FactGenerator\\info2.xml'
         path_schema = 'C:\\Users\\nasci\\Documents\\BinGTool\\FactGenerator\\Schema\\schema.xml'
 
-consult = PrologConsult(path_fact)
+reader = ReaderXML(path_fact)
+consult = PrologConsult()
 schema = SchemaReader(path_schema)
 
 for fact in schema.facts:
-    consult.set_fact(fact)
+    consult.set_fact(fact, reader.vertexs)
 
 for rule in schema.rules:
     consult.set_rule(rule)

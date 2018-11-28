@@ -1,55 +1,16 @@
-import subprocess
-import Loader as Loader
-from XML_Data.Vertex import *
-from Functions import *
-from  Prolog.PrologFactData import *
-from  Prolog.PrologRuleData import *
-from Schema.SchemaFact import *
-
-def install(name):
-    print('installing ' + name)
-    subprocess.call(['pip', 'install', name])
-
-
-try:
-    from kanren import *
-except ImportError:
-    install('kanren')
-    from kanren import *
-
-try:
-    import networkx as nx
-except ImportError:
-    install('networkx')
-    import networkx as nx
+from Prolog.PrologFactData import *
+from Prolog.PrologRuleData import *
 
 
 class PrologConsult:
-    def __init__(self, path):
-        xml = Loader.load_xml(path)
+    def __init__(self):
         self.fact_data = PrologFactData()
         self.rule_data = PrologRuleData()
-        G = nx.Graph()
 
-        edges = xml.findall('edges/edge')
-
-        for edge in edges:
-            e_source = source_name(edge.find('sourceID').text)
-            e_target = target_name(edge.find('targetID').text)
-            G.add_edge(e_source, e_target)
-
-        nx.write_graphml(G, 'info.graphml ')
-
-        vs = xml.findall('vertices/vertex')
-        self.vertexs = {}
-
-        for v in vs:
-            self.vertexs[v.find('ID').text] = Vertex(v)
-
-    def set_fact(self, f):
-        for v in self.vertexs:
-            if f.checkFact(self.vertexs[v]):
-                self.fact_data.setup_fact(f.name, self.vertexs[v].ID, self.vertexs[v].get_text(f.att_value))
+    def set_fact(self, f, vertexs):
+        for v in vertexs:
+            if f.checkFact(vertexs[v]):
+                self.fact_data.setup_fact(f.name, vertexs[v].ID, vertexs[v].get_text(f.att_value))
 
     def set_rule(self, r):
         self.rule_data.setup_rule(r)
