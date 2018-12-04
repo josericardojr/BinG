@@ -10,7 +10,7 @@ class PrologConsult:
     def set_fact(self, f, vertexs):
         for v in vertexs:
             if f.checkFact(vertexs[v]):
-                self.fact_data.setup_fact(f.name, vertexs[v].ID, vertexs[v].get_text(f.att_value))
+                self.fact_data.setup_fact(f.name, vertexs[v].ID, f.get_value(vertexs[v]))
 
     def set_rule(self, r):
         self.rule_data.setup_rule(r)

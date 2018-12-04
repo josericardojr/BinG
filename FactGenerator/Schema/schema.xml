@@ -2,7 +2,7 @@
 <schema name = "name">
 	<facts>
         <fact name="HP">
-			<attrib target="attribute//HP" filter="9" value="label" />
+			<attrib target="label" filter="Player" value="attribute//HP" />
 		</fact>
         <fact name="ObjectPosition_X">
 			<attrib target="attribute//ObjectPosition_X" filter="4.665031" value="label" />
