@@ -25,6 +25,8 @@ class SchemaRule:
         self.fact_name = rule_facts.attrib['name']
 
         for f in rule_facts:
-            facts[f.attrib['name']] = f.find('input').attrib['name']
+            facts[f.attrib['name']] = []
+            for inp in f:
+                facts[f.attrib['name']].append(inp.attrib['name'])
 
         self.facts = facts

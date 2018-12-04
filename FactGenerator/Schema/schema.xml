@@ -20,29 +20,43 @@
                     <input name="X"/>
                     <input name="Y"/>
                </inputs>
-               <facts name="facts_name">
-                    <fact name="f_player">
+               <facts name="facts_1">
+                    <fact name="f_1.1">
                         <input name="X"/>
-                    </fact>
-                    <fact name="f_round">
                         <input name="Y"/>
+                    </fact>
+                    <fact name="f_1.2">
+                        <input name="A"/>
+                        <input name="B"/>
+                        <input name="C"/>
+                        <input name="D"/>
                     </fact>
                </facts>
           </rule>
-            <rule name="Rule_2">
+            <rule name="fact_test">
                <inputs>
-                    <input name="1"/>
-                    <input name="2"/>
+                    <input name="X_test"/>
+                    <input name="Y_test"/>
                </inputs>
-               <facts name="facts_name_rule_2">
-                    <fact name="f_p1">
-                        <input name="4"/>
+               <facts name="facts_1_test">
+                    <fact name="f_1.1_test">
+                        <input name="X_test"/>
+                        <input name="Y_test"/>
                     </fact>
-                    <fact name="f_r2">
-                        <input name="3"/>
+                    <fact name="f_1.2_test">
+                        <input name="A_test"/>
                     </fact>
-                    <fact name=";)">
-                        <input name="mais de dois fatos"/>
+               </facts>
+          </rule>
+            <rule name="fact_1">
+               <inputs>
+                    <input name="X_1"/>
+                    <input name="Y_1"/>
+               </inputs>
+               <facts name="facts_1_test">
+                    <fact name="f_1.1_test">
+                        <input name="X_1"/>
+                        <input name="Y_1"/>
                     </fact>
                </facts>
           </rule>

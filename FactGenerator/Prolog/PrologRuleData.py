@@ -16,23 +16,34 @@ class PrologRuleData:
         s = rule.rule_name + '('
         #print(s)
 
-        count = len(rule.inputs)
+        length = len(rule.inputs)
         i = 0
         for inp in rule.inputs:
             s += rule.inputs[inp]
             i += 1
-            if i < count:
+            if i < length:
                 s += ','
 
-        s += '):-' + rule.fact_name + '('
+        s += '):-\n\t'
 
         count = len(rule.facts)
-        i = 0
         for fact in rule.facts:
-            s += rule.facts[fact]
-            i += 1
-            if i < count:
-                s += ','
+            length = len(rule.facts[fact])
+            s += fact + '('
+
+            for inp in rule.facts[fact]:
+                s += inp
+                length -= 1
+
+                if length > 0:
+                    s += ','
+
+            count -= 1
+            if count > 0:
+                s += '),\n\t'
+
+
+
 
         s += ').'
         #print(s)
