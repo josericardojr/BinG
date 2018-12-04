@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema name = "name">
 	<facts>
+        <fact name="HP">
+			<attrib target="attribute//HP" filter="9" value="label" />
+		</fact>
+        <fact name="ObjectPosition_X">
+			<attrib target="attribute//ObjectPosition_X" filter="4.665031" value="label" />
+		</fact>
+        <fact name="attribute">
+			<attrib target="attribute//LocalTime" filter="19.08652" value="label" />
+		</fact>
 		<fact name="f_player">
-		   <attrib name="label" filter="Player" value="label"/>
+		   <attrib target="label" filter="Player" value="label"/>
 		</fact> 
 		<fact name="f_round">
-			<attrib name="label" filter="Round" value="label"/>
-		</fact>  
-		<fact name="vertexType"> 
-			<attrib name="type"/>
-		</fact>  
+			<attrib target="label" filter="Round" value="label"/>
+		</fact>
 		<fact name="type"> 
-			<attrib name="type" filter="Agent" value="label" />
-		</fact> 
+			<attrib target="type" filter="Agent" value="label" />
+		</fact>
      </facts>
      <rules>
             <rule name="playerHit">
