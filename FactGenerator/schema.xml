@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema name = "name">
 	<facts>
-        <fact name="HP">
-			<attrib target="label" filter="Player" value="attribute//HP" />
+        <fact name="Being_Hit_Player">
+			<attrib target="label"  filter="Being Hit(Player)"  value="attribute//HP" />
+		</fact>
+        <fact name="Being_Hit_Enemy">
+			<attrib target="label" filter="Being Hit(Enemy)" />
 		</fact>
         <fact name="ObjectPosition_X">
 			<attrib target="attribute//ObjectPosition_X" filter="4.665031" value="label" />
