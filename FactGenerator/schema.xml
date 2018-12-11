@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema name = "name">
 	<facts>
-        <fact name="Being_Hit_Player">
-			<attrib target="label"  filter="Being Hit(Player)"  value="attribute//HP" />
+        <fact name="HP_Player_Full">
+            <attributes>
+                <attrib target = "attribute//HP" filter = "9" />
+                <attrib target = "label" filter = "Player" />
+            </attributes>
+			<info value="attribute//HP" />
 		</fact>
-        <fact name="Being_Hit_Enemy">
-			<attrib target="label" filter="Being Hit(Enemy)" />
+        <fact name="Round">
+            <attributes>
+                <attrib target = "label" filter = "Round" />
+            </attributes>
+			<info value="label" />
 		</fact>
-        <fact name="ObjectPosition_X">
-			<attrib target="attribute//ObjectPosition_X" filter="4.665031" value="label" />
+        <fact name="Round">
+            <attributes>
+                <attrib target = "label" filter = "Round" />
+            </attributes>
+			<info value="label" />
 		</fact>
-        <fact name="attribute">
-			<attrib target="attribute//LocalTime" filter="19.08652" value="label" />
+        <fact name="BeingHit_Player">
+             <attributes>
+                <attrib target="label" filter="Being Hit(Player)" />
+            </attributes>
+			<info value="attribute//Last" />
 		</fact>
-		<fact name="f_player">
-		   <attrib target="label" filter="Player" value="label"/>
-		</fact> 
-		<fact name="f_round">
-			<attrib target="label" filter="Round" value="label"/>
+        <fact name="BeingHit_Enemy">
+             <attributes>
+                <attrib target="label" filter="Being Hit(Enemy)" />
+            </attributes>
+			<info value="attribute//ObjectName" />
 		</fact>
-		<fact name="type"> 
-			<attrib target="type" filter="Agent" value="label" />
+        <fact name="Attacking_Enemy">
+             <attributes>
+                <attrib target="label" filter="Attacking (Enemy)" />
+            </attributes>
+			<info value="attribute//ObjectName" />
 		</fact>
      </facts>
      <rules>
