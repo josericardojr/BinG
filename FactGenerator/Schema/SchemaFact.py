@@ -17,10 +17,14 @@ class SchemaFact:
 
 
         for t in targets:
+            #confiro se no schema há um filtro
             if 'filter' in t.attrib:
+                #caso tenha adiciono ao array o filtro e o target
                 count += 1
                 self.att_filter.append(t.attrib['filter'])
                 self.att_targets.append(t.attrib['target'])
+                #confiro se o target e está localizado nos atributos
+                #e defino com função armazenar
                 if attribute_key_spliter in self.att_targets[count]:
                     splited = str(self.att_targets[count]).split(attribute_key_spliter)
                     self.checkFacts.append(lambda vertex: self.get_attribute(vertex, splited[len(splited) - 1], count))
@@ -29,7 +33,7 @@ class SchemaFact:
             else:
                 self.att_filter.append('empty')
                 self.checkFacts.append(lambda vertex: True)
-
+        #verifico se tem value e defino a função
         if 'value' in info:
             if attribute_key_spliter in info['value']:
                 splited = str(info['value']).split(attribute_key_spliter)

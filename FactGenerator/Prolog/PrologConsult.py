@@ -4,6 +4,7 @@ from Prolog.PrologRuleData import *
 
 class PrologConsult:
     def __init__(self):
+        #classes que criam e gerenciam o arquivo txt dos facts e rules
         self.fact_data = PrologFactData()
         self.rule_data = PrologRuleData()
 
