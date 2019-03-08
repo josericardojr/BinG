@@ -21,8 +21,3 @@ for fact in schema.facts:
 
 for rule in schema.rules:
     consult.set_rule(rule)
-
-
-print('Python Ended')
-
-
