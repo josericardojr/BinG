@@ -22,8 +22,6 @@ for fact in schema.facts:
 for rule in schema.rules:
     consult.set_rule(rule)
 
-consult.fact_data.close_file()
-consult.rule_data.close_file()
 
 print('Python Ended')
 

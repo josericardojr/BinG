@@ -6,11 +6,7 @@ from Prolog.PrologRule import PrologRule
 
 class PrologRuleData:
     def __init__(self):
-        path = dirname(realpath(__file__))
-        file_path = path + '\\rules.txt'
-        #print(file_path)
         self.rules = []
-        self.file = open(file_path, 'w+')
 
     def setup_rule(self, rule):
         s = rule.rule_name + '('
@@ -42,16 +38,9 @@ class PrologRuleData:
             if count > 0:
                 s += '),\n\t'
 
-
-
-
         s += ').'
-        #print(s)
-        self.file.write(s + '\n')
+        print(s)
         self.rules.append(PrologRule(s))
-
-    def close_file(self):
-        self.file.close()
 
     def get_rule(self, index):
         return self.rules[index]
