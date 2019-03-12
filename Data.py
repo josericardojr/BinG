@@ -5,7 +5,7 @@ from os.path import *
 import Commands as Com
 import sys
 from os.path import *
-
+from KanrenBing.KanrenBing import *
 
 path = dirname(realpath(__file__))
 
@@ -21,3 +21,6 @@ for fact in schema.facts:
 
 for rule in schema.rules:
     consult.set_rule(rule)
+
+
+kanren = KanrenBing(consult)

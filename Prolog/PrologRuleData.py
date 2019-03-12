@@ -39,7 +39,7 @@ class PrologRuleData:
                 s += '),\n\t'
 
         s += ').'
-        print(s)
+        #print(s)
         self.rules.append(PrologRule(s))
 
     def get_rule(self, index):
