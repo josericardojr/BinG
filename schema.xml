@@ -30,11 +30,11 @@
              <attributes>
                 <attrib target="label" filter="Being Hit(Enemy)" />
             </attributes>
-			<info value="attribute//ObjectName" />
+			<info value="attribute//InstanceID" />
 		</fact>
         <fact name="Attacking_Enemy">
              <attributes>
-                <attrib target="label" filter="Attacking (Enemy)" />
+                <attrib target="label" filter="Attacking (Enemy)2" />
             </attributes>
 			<info value="attribute//ObjectName" />
 		</fact>
@@ -82,6 +82,37 @@
                     <fact name="f_1.1_test">
                         <input name="X_1"/>
                         <input name="Y_1"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="Attacking">
+               <inputs>
+                    <input name="shooter"/>
+                    <input name="target"/>
+               </inputs>
+               <facts name="facts_1">
+                    <fact name="Attacking_Enemy">
+                        <input name="shooter"/>
+                        <input name="target"/>
+                    </fact>
+                    <fact name="BeingHit_Enemy">
+                        <input name="target"/>
+                        <input name="shooter"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="Counter">
+               <inputs>
+                    <input name="shooter"/>
+               </inputs>
+               <facts name="facts_1">
+                    <fact name="BeingHit_Player">
+                        <input name="_x"/>
+                        <input name="shooter"/>
+                    </fact>
+                    <fact name="BeingHit_Enemy">
+                        <input name="_y"/>
+                        <input name="shooter"/>
                     </fact>
                </facts>
           </rule>

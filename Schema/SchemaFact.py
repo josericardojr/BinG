@@ -15,7 +15,6 @@ class SchemaFact:
         self.att_filter = []
         self.checkFacts = []
 
-
         for t in targets:
             if 'filter' in t.attrib:
                 count += 1

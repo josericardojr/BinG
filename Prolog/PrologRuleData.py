@@ -40,7 +40,7 @@ class PrologRuleData:
 
         s += ').'
         #print(s)
-        self.rules.append(PrologRule(s))
+        self.rules.append(rule)
 
     def get_rule(self, index):
         return self.rules[index]

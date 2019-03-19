@@ -30,3 +30,7 @@ class SchemaRule:
                 facts[f.attrib['name']].append(inp.attrib['name'])
 
         self.facts = facts
+
+    def get_request_input(self):
+        for i in self.inputs:
+            return self.inputs[i]

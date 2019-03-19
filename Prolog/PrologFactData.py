@@ -1,6 +1,6 @@
 from os.path import *
 from Functions import *
-from Prolog.PrologRule import *
+from Prolog.PrologFact import *
 
 
 class PrologFactData:
@@ -10,7 +10,7 @@ class PrologFactData:
     def setup_fact(self, name, value1, value2):
         s = name + '(' + value1 + ',' + value2 + ')'
         #print(s)
-        self.facts.append(PrologRule([name, value1, value2]))
+        self.facts.append(PrologFact([name, value1, value2]))
 
     def fact(self, index):
         return self.facts[index]
