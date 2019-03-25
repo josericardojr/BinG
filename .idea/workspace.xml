@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e888f4cd-7f94-478e-8d16-17eb98cdf7af" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,87 +100,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prolog/facts.txt">
+      <file leaf-file-name="Data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4930">
-              <caret line="145" column="38" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="38" />
+            <state relative-caret-position="513">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="info2.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="863">
-              <caret line="1847" column="30" selection-start-line="1847" selection-start-column="17" selection-end-line="1847" selection-end-column="30" />
+            <state relative-caret-position="23193">
+              <caret line="859" column="29" lean-forward="false" selection-start-line="859" selection-start-column="23" selection-end-line="859" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="schema.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schema.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+            <state relative-caret-position="216">
+              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
-                <element signature="n#fact#0;n#facts#0;n#schema#0;n#!!top" />
-                <element signature="n#fact#1;n#facts#0;n#schema#0;n#!!top" />
-                <element signature="n#fact#2;n#facts#0;n#schema#0;n#!!top" />
-                <element signature="n#fact#3;n#facts#0;n#schema#0;n#!!top" />
-                <element signature="n#fact#4;n#facts#0;n#schema#0;n#!!top" />
-                <element signature="n#fact#5;n#facts#0;n#schema#0;n#!!top" />
-                <element signature="n#rule#0;n#rules#0;n#schema#0;n#!!top" />
-                <element signature="n#rule#1;n#rules#0;n#schema#0;n#!!top" />
-                <element signature="n#rule#2;n#rules#0;n#schema#0;n#!!top" />
-                <element signature="n#rule#3;n#rules#0;n#schema#0;n#!!top" />
+                <element signature="n#facts#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#fact#0;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#fact#1;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#fact#2;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#inputs#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#facts#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#rule#1;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#rule#2;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#inputs#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+                <element signature="n#facts#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Schema/SchemaRule.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="KanrenBing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="177">
+              <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="KanrenBingRule.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#650#709#0" />
-                <element signature="e#800#1089#0" />
-                <marker date="1553029948680" expanded="true" signature="903:925" ph="..." />
-                <marker date="1553029948680" expanded="true" signature="989:998" ph="..." />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="KanrenBingRequest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRequest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="135">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,7 +184,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vertex_320&lt;</find>
       <find>vertex_623&lt;</find>
       <find>vertex_618&lt;</find>
       <find>vertex_620&lt;</find>
@@ -225,6 +213,7 @@
       <find>Being Hit(P</find>
       <find>Round_-20444</find>
       <find>Chaser_-20472</find>
+      <find>chaser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -258,7 +247,6 @@
         <option value="$PROJECT_DIR$/ReaderXML/ReaderXML.py" />
         <option value="$PROJECT_DIR$/Kanren/Kanren.py" />
         <option value="$PROJECT_DIR$/KanrenObj/Kanren.py" />
-        <option value="$PROJECT_DIR$/Data.py" />
         <option value="$PROJECT_DIR$/Prolog/PrologFactData.py" />
         <option value="$PROJECT_DIR$/Prolog/PrologRule.py" />
         <option value="$PROJECT_DIR$/Prolog/PrologFact.py" />
@@ -271,8 +259,9 @@
         <option value="$PROJECT_DIR$/schema.xml" />
         <option value="$PROJECT_DIR$/Schema/SchemaRule.py" />
         <option value="$PROJECT_DIR$/KanrenBing/KanrenBingRequest.py" />
-        <option value="$PROJECT_DIR$/KanrenBing/KanrenBingRule.py" />
         <option value="$PROJECT_DIR$/KanrenBing/KanrenBing.py" />
+        <option value="$PROJECT_DIR$/Data.py" />
+        <option value="$PROJECT_DIR$/KanrenBing/KanrenBingRule.py" />
       </list>
     </option>
   </component>
@@ -285,10 +274,22 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -325,7 +326,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,7 +357,6 @@
   </component>
   <component name="RunManager" selected="Python.Data">
     <configuration name="Data" type="PythonConfigurationType" factoryName="Python">
-      <module name="FactGenerator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -368,17 +367,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FactGenerator" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data.py" />
       <option name="PARAMETERS" value="sssP" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="Kanren" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FactGenerator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -389,17 +385,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FactGenerator" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kanren/Kanren.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FactGenerator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -410,17 +403,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FactGenerator" />
       <option name="SCRIPT_NAME" value="C:\Users\nasci\Documents\FactGenerator\root\Loader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="Prolog" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FactGenerator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -431,17 +421,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FactGenerator" />
       <option name="SCRIPT_NAME" value="D:\Documentos\FactGenerator\root\PrologFactGenerator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="PrologConsult" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FactGenerator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -452,17 +439,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FactGenerator" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root/PrologConsult.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="SchemaReader" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FactGenerator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -473,32 +457,33 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FactGenerator" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Schema/SchemaReader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.Data" />
-      <item itemvalue="Python.SchemaReader" />
-      <item itemvalue="Python.Main" />
-      <item itemvalue="Python.Prolog" />
-      <item itemvalue="Python.PrologConsult" />
-      <item itemvalue="Python.Kanren" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Python.Data" />
+      <item index="1" class="java.lang.String" itemvalue="Python.SchemaReader" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Kanren" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Main" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Prolog" />
+      <item index="5" class="java.lang.String" itemvalue="Python.PrologConsult" />
     </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Python.Kanren" />
-        <item itemvalue="Python.PrologConsult" />
-        <item itemvalue="Python.Prolog" />
-        <item itemvalue="Python.Main" />
-        <item itemvalue="Python.SchemaReader" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.PrologConsult" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Prolog" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Kanren" />
+        <item index="4" class="java.lang.String" itemvalue="Python.SchemaReader" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -514,26 +499,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1288" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
-      <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.3290735" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.3290735" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3290735" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.399361" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -545,11 +530,127 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23193">
+          <caret line="859" column="29" lean-forward="false" selection-start-line="859" selection-start-column="23" selection-end-line="859" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1431">
+          <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2781">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#0;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#1;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#2;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#inputs#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#facts#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#1;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#2;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#inputs#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#facts#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prolog/facts.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3915">
+          <caret line="145" column="38" lean-forward="false" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49869">
+          <caret line="1847" column="30" lean-forward="false" selection-start-line="1847" selection-start-column="17" selection-end-line="1847" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding>
+            <element signature="n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#0;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#1;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#2;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#inputs#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#facts#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#1;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#2;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#inputs#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#facts#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Schema/SchemaRule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/plistlib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3135">
-          <caret line="203" column="6" selection-start-line="203" selection-start-column="6" selection-end-line="203" selection-end-column="6" />
+          <caret line="203" column="6" lean-forward="false" selection-start-line="203" selection-start-column="6" selection-end-line="203" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -566,14 +667,14 @@
     <entry file="file://$PROJECT_DIR$/Prolog/PrologActivityRegister.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="1" column="23" lean-forward="true" selection-start-column="21" selection-end-line="1" selection-end-column="23" />
+          <caret line="1" column="23" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="1" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Commands.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -581,7 +682,7 @@
     <entry file="file://$PROJECT_DIR$/XML_Data/Vertex.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -589,21 +690,21 @@
     <entry file="file://$PROJECT_DIR$/Functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="14" />
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ReaderXML/ReaderXML.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -616,107 +717,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Prolog/facts.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4930">
-          <caret line="145" column="38" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prolog/PrologConsult.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="3915">
+          <caret line="145" column="38" lean-forward="false" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prolog/PrologRuleData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prolog/PrologFactData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Schema/SchemaFact.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="57" />
+          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prolog/PrologRule.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prolog/rules.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="1847" column="30" selection-start-line="1847" selection-start-column="17" selection-end-line="1847" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/kanren/facts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2920">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/kanren/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="225" column="4" selection-start-line="225" selection-start-column="4" selection-end-line="225" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/unification/variable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
-          <folding>
-            <element signature="n#fact#0;n#facts#0;n#schema#0;n#!!top" />
-            <element signature="n#fact#1;n#facts#0;n#schema#0;n#!!top" />
-            <element signature="n#fact#2;n#facts#0;n#schema#0;n#!!top" />
-            <element signature="n#fact#3;n#facts#0;n#schema#0;n#!!top" />
-            <element signature="n#fact#4;n#facts#0;n#schema#0;n#!!top" />
-            <element signature="n#fact#5;n#facts#0;n#schema#0;n#!!top" />
-            <element signature="n#rule#0;n#rules#0;n#schema#0;n#!!top" />
-            <element signature="n#rule#1;n#rules#0;n#schema#0;n#!!top" />
-            <element signature="n#rule#2;n#rules#0;n#schema#0;n#!!top" />
-            <element signature="n#rule#3;n#rules#0;n#schema#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/kanren/facts.py" />
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/kanren/core.py" />
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/unification/variable.py" />
     <entry file="file://$PROJECT_DIR$/Schema/SchemaReader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -726,39 +762,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Schema/SchemaRule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="27">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRule.py">
+    <entry file="file://$PROJECT_DIR$/Prolog/rules.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prolog/PrologConsult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23193">
+          <caret line="859" column="29" lean-forward="false" selection-start-line="859" selection-start-column="23" selection-end-line="859" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#650#709#0" />
-            <element signature="e#800#1089#0" />
-            <marker date="1553029948680" expanded="true" signature="903:925" ph="..." />
-            <marker date="1553029948680" expanded="true" signature="989:998" ph="..." />
+            <element signature="n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#0;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#1;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#fact#2;n#facts#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#inputs#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#facts#0;n#rule#0;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#1;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#2;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#inputs#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
+            <element signature="n#facts#0;n#rule#3;n#rules#0;n#schema#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="177">
+          <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KanrenBing/KanrenBingRule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -26,15 +26,6 @@ class KanrenBingRule:
 
         return c
 
-    def second_fact_setup(self, fact_name, inputs_name, bing_facts):
-        self.bing_function = conde((self.bing_function, fact_name))
-
-    def get_first_function(self, first):
-        if first:
-            return lambda f_fact_name, f_inputs_name, f_bing_facts: self.create_kanren_request(f_fact_name, f_inputs_name, f_bing_facts)
-        else:
-            return lambda f_fact_name, f_inputs_name, f_bing_facts: self.second_fact_setup(f_fact_name, f_inputs_name, f_bing_facts)
-
     def get_new_var(self, token):
         if str(token) != str(self.request_obj_name):
             return var(token)
