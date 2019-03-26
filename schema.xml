@@ -40,51 +40,6 @@
 		</fact>
      </facts>
      <rules>
-            <rule name="playerHit">
-               <inputs>
-                    <input name="X"/>
-                    <input name="Y"/>
-               </inputs>
-               <facts name="facts_1">
-                    <fact name="f_1.1">
-                        <input name="X"/>
-                        <input name="Y"/>
-                    </fact>
-                    <fact name="f_1.2">
-                        <input name="A"/>
-                        <input name="B"/>
-                        <input name="C"/>
-                        <input name="D"/>
-                    </fact>
-               </facts>
-          </rule>
-            <rule name="fact_test">
-               <inputs>
-                    <input name="X_test"/>
-                    <input name="Y_test"/>
-               </inputs>
-               <facts name="facts_1_test">
-                    <fact name="f_1.1_test">
-                        <input name="X_test"/>
-                        <input name="Y_test"/>
-                    </fact>
-                    <fact name="f_1.2_test">
-                        <input name="A_test"/>
-                    </fact>
-               </facts>
-          </rule>
-            <rule name="fact_1">
-               <inputs>
-                    <input name="X_1"/>
-                    <input name="Y_1"/>
-               </inputs>
-               <facts name="facts_1_test">
-                    <fact name="f_1.1_test">
-                        <input name="X_1"/>
-                        <input name="Y_1"/>
-                    </fact>
-               </facts>
-          </rule>
             <rule name="Attacking">
                <inputs>
                     <input name="shooter"/>

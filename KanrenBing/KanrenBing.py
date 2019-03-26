@@ -21,7 +21,7 @@ class KanrenBing:
             for f in rule.facts:
                 if f not in bing_facts:
                     exist = False
-                    print('The Rule ' + rule.rule_name + '\'s fact: \'' + f + '\' dont exists')
+                    #print('The Rule ' + rule.rule_name + '\'s fact: \'' + f + '\' dont exists')
                     break
 
             if exist:
@@ -46,7 +46,7 @@ class KanrenBing:
             for r in result:
                 print(r)
         else:
-            print('Result: ' + str(result))'''
+            print('Result: ' + str(result))
 
         print('_____')
         for r_name in bing_rules:
@@ -58,4 +58,4 @@ class KanrenBing:
                 for re in result:
                     print(re)
             else:
-                print('Result: ' + str(result))
+                print('Result: ' + str(result))'''
