@@ -24,3 +24,8 @@ for rule in schema.rules:
 
 
 kanren = KanrenBing(consult)
+
+for r_name in kanren.rules:
+    print('<>' * 3)
+    print('Using rule: ' + r_name)
+    KanrenBing.normalize_result(kanren.rules[r_name].run())

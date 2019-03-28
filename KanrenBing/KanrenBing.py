@@ -28,17 +28,17 @@ class KanrenBing:
                     bing_rules[rule.rule_name] = KanrenBingRule(rule.get_return_var())
                     bing_rules[rule.rule_name].setup_rule(rule.facts, bing_facts)
 
-        for r_name in bing_rules:
-            print('<>' * 3)
-            print('Using rule: ' + r_name)
-            result = (run(0, bing_rules[r_name].request_obj, bing_rules[r_name].get_request_command()))
+        self.rules = bing_rules
+        self.facts = bing_facts
 
-            if len(result) > 1:
-                print('Results ' + str(len(result)) + ':')
-                for re in result:
-                    print(re)
-            else:
-                print('Result: ' + str(result))
+    @staticmethod
+    def normalize_result(result):
+        if len(result) > 1:
+            print('Results ' + str(len(result)) + ':')
+            for re in result:
+                print(re)
+        else:
+            print('Result: ' + str(result))
 
     @staticmethod
     def error_rule(rule_name, f):

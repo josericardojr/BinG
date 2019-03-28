@@ -28,6 +28,9 @@ class KanrenBingRule:
 
         return c
 
+    def run(self):
+        return run(0, self.request_obj, self.get_request_command())
+
     def get_new_var(self, token):
 
         if '#' in str(token):
