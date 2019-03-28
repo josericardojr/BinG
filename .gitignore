@@ -35,3 +35,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+.idea/workspace.xml
+.idea/FactGenerator.iml
+.idea/misc.xml
+*.pyc
