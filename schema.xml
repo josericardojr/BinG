@@ -41,6 +41,7 @@
      </facts>
      <rules>
             <rule name="Attacking">
+                <return name="shooter"/>
                <inputs>
                     <input name="shooter"/>
                     <input name="target"/>
@@ -57,10 +58,11 @@
                </facts>
           </rule>
             <rule name="Counter">
-               <inputs>
+                <return name="shooter"/>
+                <inputs>
                     <input name="shooter"/>
-               </inputs>
-               <facts name="facts_1">
+                </inputs>
+                <facts name="facts_1">
                     <fact name="BeingHit_Player">
                         <input name="_x"/>
                         <input name="shooter"/>

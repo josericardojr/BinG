@@ -7,6 +7,8 @@ class SchemaRule:
         self.rule_name = rules.attrib['name']
 
         rule_inputs = rules.find('inputs')
+        r = rules.find('return')
+        self.return_var = r.attrib['name']
 
         inputs = {}
 
@@ -31,6 +33,5 @@ class SchemaRule:
 
         self.facts = facts
 
-    def get_request_input(self):
-        for i in self.inputs:
-            return self.inputs[i]
+    def get_return_var(self):
+        return self.return_var

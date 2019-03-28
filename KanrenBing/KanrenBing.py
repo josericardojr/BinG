@@ -25,7 +25,7 @@ class KanrenBing:
 
             if exist:
                 if rule.rule_name not in bing_rules:
-                    bing_rules[rule.rule_name] = KanrenBingRule(rule.get_request_input())
+                    bing_rules[rule.rule_name] = KanrenBingRule(rule.get_return_var())
                     bing_rules[rule.rule_name].setup_rule(rule.facts, bing_facts)
 
         for r_name in bing_rules:
