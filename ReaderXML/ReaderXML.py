@@ -19,7 +19,7 @@ except ImportError:
 class ReaderXML:
     def __init__(self, path):
         xml = Loader.load_xml(path)
-        G = nx.Graph()
+        '''G = nx.Graph()
 
         edges = xml.findall('edges/edge')
 
@@ -28,7 +28,7 @@ class ReaderXML:
             e_target = target_name(edge.find('targetID').text)
             G.add_edge(e_source, e_target)
 
-        nx.write_graphml(G, 'info.graphml ')
+        nx.write_graphml(G, 'info.graphml ')'''
 
         vs = xml.findall('vertices/vertex')
         self.vertexs = {}
