@@ -31,7 +31,22 @@ class SchemaRule:
             for inp in f:
                 facts[f.attrib['name']].append(inp.attrib['name'])
 
+        find = False
+        for f1 in facts:
+            for f2 in facts[f1]:
+                if self.return_var == f2:
+                    find = True
+
+        if not find:
+            SchemaRule.error_feedback(self.rule_name + ' do not have any fact\'s input named: ' + self.return_var)
+
         self.facts = facts
 
     def get_return_var(self):
         return self.return_var
+
+    @staticmethod
+    def error_feedback(s):
+        print("ERROR:")
+        print(s)
+        print('<>' * 3)

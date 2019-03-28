@@ -41,7 +41,7 @@
      </facts>
      <rules>
             <rule name="Attacking">
-                <return name="shooter"/>
+                <return name="shooter2"/>
                <inputs>
                     <input name="shooter"/>
                     <input name="target"/>
