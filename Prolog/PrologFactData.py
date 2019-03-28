@@ -8,8 +8,6 @@ class PrologFactData:
         self.facts = []
 
     def setup_fact(self, name, value1, value2):
-        s = name + '(' + value1 + ',' + value2 + ')'
-        #print(s)
         self.facts.append(PrologFact([name, value1, value2]))
 
     def fact(self, index):
