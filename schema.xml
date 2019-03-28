@@ -85,5 +85,17 @@
                     </fact>
                </facts>
           </rule>
+            <rule name="Teste_valor_input">
+                <return name="x"/>
+                <inputs>
+                    <input name="shooter"/>
+                </inputs>
+                <facts name="facts_1">
+                    <fact name="BeingHit_Player">
+                        <input name="x"/>
+                        <input name="@shooter"/>
+                    </fact>
+               </facts>
+          </rule>
    </rules>
 </schema>

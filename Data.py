@@ -25,7 +25,12 @@ for rule in schema.rules:
 
 kanren = KanrenBing(consult)
 
+inputs =\
+    {
+      'shooter': 'Round_-20444',
+    }
+
 for r_name in kanren.rules:
     print('<>' * 3)
     print('Using rule: ' + r_name)
-    KanrenBing.normalize_result(kanren.rules[r_name].run())
+    KanrenBing.normalize_result(kanren.rules[r_name].run(inputs))

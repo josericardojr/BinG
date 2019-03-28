@@ -17,19 +17,17 @@ class KanrenBingRule:
     def create_kanren_request(self, fact_name, inputs_name, bing_facts):
         self.rule_requests.append(KanrenBingRequest(bing_facts[fact_name], self.get_new_var(inputs_name[0]), self.get_new_var(inputs_name[1])))
 
-    def get_request_command(self):
-        c = self.rule_requests[0]
+    def get_request_command(self, inputs):
+        c = self.rule_requests[0].get_request(inputs)
 
         if len(self.rule_requests) > 1:
             for i in range(len(self.rule_requests) - 1):
-                c = conde((c.request, self.rule_requests[i + 1].request))
-        else:
-            c = self.rule_requests[0].request
+                c = conde((c, self.rule_requests[i + 1].get_request(inputs)))
 
         return c
 
-    def run(self):
-        return run(0, self.request_obj, self.get_request_command())
+    def run(self, inputs):
+        return run(0, self.request_obj, self.get_request_command(inputs))
 
     def get_new_var(self, token):
 
@@ -37,6 +35,14 @@ class KanrenBingRule:
             s = ''
             for i in token:
                 if '#' not in i:
+                    s += i
+
+            return s
+
+        if '@' in str(token):
+            s = ''
+            for i in token:
+                if '@' not in i:
                     s += i
 
             return s
