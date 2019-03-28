@@ -29,6 +29,15 @@ class KanrenBingRule:
         return c
 
     def get_new_var(self, token):
+
+        if '#' in str(token):
+            s = ''
+            for i in token:
+                if '#' not in i:
+                    s += i
+
+            return s
+
         if str(token) != str(self.request_obj_name):
             return var(token)
 

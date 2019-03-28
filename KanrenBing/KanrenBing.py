@@ -29,7 +29,7 @@ class KanrenBing:
                     bing_rules[rule.rule_name].setup_rule(rule.facts, bing_facts)
 
         for r_name in bing_rules:
-            print('/\\' * 3)
+            print('<>' * 3)
             print('Using rule: ' + r_name)
             result = (run(0, bing_rules[r_name].request_obj, bing_rules[r_name].get_request_command()))
 
@@ -42,4 +42,5 @@ class KanrenBing:
 
     @staticmethod
     def error_rule(rule_name, f):
+        print('<>' * 3)
         print('The Rule ' + rule_name + '\'s fact: \'' + f + '\' dont exists')

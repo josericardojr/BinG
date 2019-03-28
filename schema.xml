@@ -64,12 +64,24 @@
                 </inputs>
                 <facts name="facts_1">
                     <fact name="BeingHit_Player">
-                        <input name="_x"/>
+                        <input name="x"/>
                         <input name="shooter"/>
                     </fact>
                     <fact name="BeingHit_Enemy">
-                        <input name="_y"/>
+                        <input name="y"/>
                         <input name="shooter"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="Teste_valor_constante">
+                <return name="x"/>
+                <inputs>
+                    <input name="shooter"/>
+                </inputs>
+                <facts name="facts_1">
+                    <fact name="BeingHit_Player">
+                        <input name="x"/>
+                        <input name="#Chaser_-22088"/>
                     </fact>
                </facts>
           </rule>

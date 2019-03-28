@@ -1,4 +1,5 @@
 from xml.etree import ElementTree
+from xml.etree import ElementTree
 
 
 class SchemaRule:
@@ -47,6 +48,5 @@ class SchemaRule:
 
     @staticmethod
     def error_feedback(s):
-        print("ERROR:")
-        print(s)
         print('<>' * 3)
+        print('ERROR: ' + s)
