@@ -23,6 +23,8 @@ class KanrenBingRule:
         if len(self.rule_requests) > 1:
             for i in range(len(self.rule_requests) - 1):
                 c = conde((c.request, self.rule_requests[i + 1].request))
+        else:
+            c = self.rule_requests[0].request
 
         return c
 
