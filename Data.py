@@ -1,6 +1,7 @@
 from Prolog.PrologConsult import *
 from Schema.SchemaReader import *
 from ReaderXML.ReaderXML import *
+from Processor import *
 from os.path import *
 import Commands as Com
 import sys
@@ -24,6 +25,8 @@ for rule in schema.rules:
 
 
 kanren = KanrenBing(consult)
+
+processor = Processor(kanren)
 
 inputs =\
     {
