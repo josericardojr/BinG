@@ -10,7 +10,7 @@ from KanrenBing.KanrenBing import *
 
 path = dirname(realpath(__file__))
 
-path_fact = path + '\\info2.xml'
+path_fact = path + '\\info3.xml'
 path_schema = path + '\\schema.xml'
 
 reader = ReaderXML(path_fact)
@@ -23,14 +23,13 @@ for fact in schema.facts:
 for rule in schema.rules:
     consult.set_rule(rule)
 
-
 kanren = KanrenBing(consult)
 
 processor = Processor(kanren)
 
 inputs =\
     {
-      'shooter': 'Round_-20444',
+      'shooter': 'Chaser',
     }
 
 for r_name in kanren.rules:

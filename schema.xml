@@ -24,7 +24,7 @@
              <attributes>
                 <attrib target="label" filter="Being Hit(Player)" />
             </attributes>
-			<info value="attribute//Last" />
+			<info value="attribute//LastType" />
 		</fact>
         <fact name="BeingHit_Enemy">
              <attributes>
@@ -70,18 +70,6 @@
                     <fact name="BeingHit_Enemy">
                         <input name="y"/>
                         <input name="shooter"/>
-                    </fact>
-               </facts>
-          </rule>
-            <rule name="Teste_valor_constante">
-                <return name="x"/>
-                <inputs>
-                    <input name="shooter"/>
-                </inputs>
-                <facts name="facts_1">
-                    <fact name="BeingHit_Player">
-                        <input name="x"/>
-                        <input name="#Chaser_-22088"/>
                     </fact>
                </facts>
           </rule>
