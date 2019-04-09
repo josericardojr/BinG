@@ -10,12 +10,8 @@ class KanrenBingRule:
         self.bing_function = ()
         self.rule_requests = []
 
-    def setup_rule(self, rule_facts, bing_facts):
-        for f in rule_facts:
-            self.create_kanren_request(f, rule_facts[f], bing_facts)
-
-    def create_kanren_request(self, fact_name, inputs_name, bing_facts):
-        self.rule_requests.append(KanrenBingRequest(bing_facts[fact_name], self.get_new_var(inputs_name[0]), self.get_new_var(inputs_name[1])))
+    def run(self, inputs):
+        return run(0, self.request_obj, self.get_request_command(inputs))
 
     def get_request_command(self, inputs):
         c = self.rule_requests[0].get_request(inputs)
@@ -26,26 +22,20 @@ class KanrenBingRule:
 
         return c
 
-    def run(self, inputs):
-        return run(0, self.request_obj, self.get_request_command(inputs))
+    def setup_rule(self, rule, bing_facts):
+        for f in rule.facts:
+            self.create_kanren_request(rule.inputs, bing_facts[f], rule.facts[f])
 
-    def get_new_var(self, token):
+    def create_kanren_request(self, rule_inputs, bing_fact, rule_facts_inputs_names):
+        self.rule_requests.append(
+            KanrenBingRequest(bing_fact,
+                              self.get_new_var(rule_facts_inputs_names[0], rule_inputs),
+                              self.get_new_var(rule_facts_inputs_names[1], rule_inputs)))
 
-        if '#' in str(token):
-            s = ''
-            for i in token:
-                if '#' not in i:
-                    s += i
+    def get_new_var(self, token, rule_inputs):
 
-            return s
-
-        if '@' in str(token):
-            s = ''
-            for i in token:
-                if '@' not in i:
-                    s += i
-
-            return s
+        if token in rule_inputs:
+            return token
 
         if str(token) != str(self.request_obj_name):
             return var(token)

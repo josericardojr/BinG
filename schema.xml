@@ -81,7 +81,7 @@
                 <facts name="facts_1">
                     <fact name="BeingHit_Player">
                         <input name="x"/>
-                        <input name="@shooter"/>
+                        <input name="shooter"/>
                     </fact>
                </facts>
           </rule>

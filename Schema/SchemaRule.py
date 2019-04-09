@@ -11,21 +11,17 @@ class SchemaRule:
         r = rules.find('return')
         self.return_var = r.attrib['name']
 
-        inputs = {}
+        inputs = []
 
-        count = 0
         for inp in rule_inputs:
             for att in inp.attrib:
-                inputs[att + '_' + str(count)] = inp.attrib[att]
-                count += 1
+                inputs.append(inp.attrib[att])
 
         self.inputs = inputs
 
         rule_facts = rules.find('facts')
 
         facts = {}
-
-        self.fact_name = rule_facts.attrib['name']
 
         for f in rule_facts:
             facts[f.attrib['name']] = []
