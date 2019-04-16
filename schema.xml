@@ -40,23 +40,6 @@
 		</fact>
      </facts>
      <rules>
-            <rule name="Attacking">
-                <return name="shooter2"/>
-               <inputs>
-                    <input name="shooter"/>
-                    <input name="target"/>
-               </inputs>
-               <facts>
-                    <fact name="Attacking_Enemy">
-                        <input name="shooter"/>
-                        <input name="target"/>
-                    </fact>
-                    <fact name="BeingHit_Enemy">
-                        <input name="target"/>
-                        <input name="shooter"/>
-                    </fact>
-               </facts>
-          </rule>
             <rule name="Counter">
                 <return name="shooter"/>
                 <inputs>
