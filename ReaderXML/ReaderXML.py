@@ -3,19 +3,6 @@ from Functions import *
 import Loader as Loader
 from XML_Data.Vertex import *
 
-
-def install(name):
-    print('installing ' + name)
-    subprocess.call(['pip', 'install', name])
-
-
-try:
-    import networkx as nx
-except ImportError:
-    install('networkx')
-    import networkx as nx
-
-
 class ReaderXML:
     def __init__(self, path):
         xml = Loader.load_xml(path)
