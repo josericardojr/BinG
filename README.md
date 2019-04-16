@@ -1,7 +1,9 @@
 # MorphWing
 
 MorphWing is a simple "Shoot 'em Up" game in which the player has to dodge enemy attacks continuously while attacking them to survive as much time as it can.
+
 The game is used as a tool for testing the BinG framework for automatic game balancing, and was featured as so in the article "BinG: A Framework for Dynamic Game Balancing using Provenance", publicated in SBGames 2018.
+
 By using BinG and the provenance component, developed by Troy Kohwalter (UFF, Universidade Federal Fluminense), the game adapts itself in enemy behavior, item spawns, player damage and other aspects according to the player's performance.
 
 # Team
