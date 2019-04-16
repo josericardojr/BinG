@@ -46,7 +46,7 @@
                     <input name="shooter"/>
                     <input name="target"/>
                </inputs>
-               <facts name="facts_1">
+               <facts>
                     <fact name="Attacking_Enemy">
                         <input name="shooter"/>
                         <input name="target"/>
@@ -62,7 +62,7 @@
                 <inputs>
                     <input name="shooter"/>
                 </inputs>
-                <facts name="facts_1">
+                <facts>
                     <fact name="BeingHit_Player">
                         <input name="x"/>
                         <input name="shooter"/>
@@ -78,7 +78,7 @@
                 <inputs>
                     <input name="shooter"/>
                 </inputs>
-                <facts name="facts_1">
+                <facts>
                     <fact name="BeingHit_Player">
                         <input name="x"/>
                         <input name="shooter"/>

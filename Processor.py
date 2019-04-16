@@ -1,15 +1,23 @@
 from kanren import Relation, facts, var, run
 from KanrenBing.KanrenBing import *
 
+kanrenBing
+
+# Inicializador, pega a referencia do kanren
 class Processor:
     def __init__(self, kanren):
+        self.kanrenBing = kanren
 
-        inputs = \
-            {
-                'shooter': 'Chaser',
-            }
+def testChaser():
+    inputs = \
+    {
+        'shooter': 'Chaser',
+    }
+    print(kanrenBing.rules["Teste_valor_input"].run(inputs))
 
-        kanrenBing = kanren
-        print(kanrenBing.rules["Teste_valor_input"].run(inputs))
-
-        
+def testArgs(shooter):
+    inputs = \
+    {
+        'shooter': shooter,
+    }
+    print(kanrenBing.rules["Teste_valor_input"].run(inputs))
