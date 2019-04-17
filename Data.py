@@ -24,14 +24,14 @@ key_path_prov = 'path_prov'
 key_path_schema = 'path_schema'
 
 
-path_fact = ''
+path_prov = ''
 path_schema = ''
 
 for arg in sys.argv:
     if key_path_prov in str(arg):
         str_split = str(arg).split(char_split)
         if len(str_split) > 1:
-            path_fact = str_split[1]
+            path_prov = str_split[1]
 
     if key_path_schema in str(arg):
         str_split = str(arg).split(char_split)
@@ -39,19 +39,9 @@ for arg in sys.argv:
             path_schema = str_split[1]
 
 
-reader = ReaderXML(path_fact)
-consult = PrologConsult()
-schema = SchemaReader(path_schema)
 
-for fact in schema.facts:
-    consult.set_fact(fact, reader.vertexs)
 
-for rule in schema.rules:
-    consult.set_rule(rule)
-
-kanren = KanrenBing(consult)
-
-processor = Processor(kanren)
+processor = Processor(path_prov, path_schema)
 print('KEY_PATH_READY')
 t = threading.Thread(target=run, args=(processor,))
 t.start()
