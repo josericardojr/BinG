@@ -3,6 +3,11 @@ from KanrenBing.KanrenBing import *
 
 kanrenBing
 
+tratamentoDeDadosTeste =	{
+  "Tag1": "Dado1",
+  "Tag2": "Dado2",
+}
+
 # Inicializador, pega a referencia do kanren
 class Processor:
     def __init__(self, kanren):
@@ -34,3 +39,8 @@ def testArgs(shooter):
     
 def receive_instructions(self, instructions):
     print(instructions)
+    tratamentoDeDadosTeste["Tag1"] = "new Instruction"
+    tratamentoDeDadosTeste["Tag2"] = "new Instruction2"
+
+def send_instructions(self):
+    print("") # Envia via Print o resultado final do processamento
