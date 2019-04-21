@@ -14,12 +14,44 @@ tratamentoDeDadosTeste =	{
 class Processor:
     def __init__(self, path_prov, path_schema):
         self.setup_bing(path_prov, path_schema)
+
+        '''Instancio o dicionário'''
+        self.methods = {}
+        key = 'key_test_python'
+        '''adiciono um método com a função que criei'''
+        '''passo a chave do método e o método'''
+        self.add_method(key, self.example_method)
+
+        key = 'player_damage'
+        self.add_method(key, self.fire_damage)
+
+    def fire_damage(self):
+        inputs = \
+            {
+                'shooter': 'Chaser',
+            }
+        print('_' * 5)
+        print('hi i am a player_damage example')
+        print('calling rule: \'Teste_valor_input\'')
+        print(self.kanrenBing.rules["Teste_valor_input"].run(inputs))
+
+    def example_method(self):
         inputs = \
             {
                 'shooter': 'Chaser',
             }
 
+        print('_' * 5)
+        print('hi i am an example')
+        print('calling rule: \'Teste_valor_input\'')
         print(self.kanrenBing.rules["Teste_valor_input"].run(inputs))
+
+    def add_method(self, method_key, method):
+        if method_key not in self.methods:
+            self.methods[method_key] = method
+        else:
+            print('error: method_key already exists')
+
 
     def setup_bing(self, path_prov, path_schema):
         print(path_prov)
@@ -54,8 +86,13 @@ class Processor:
 
     def receive_instructions(self, instructions):
         print(instructions)
-        tratamentoDeDadosTeste["Tag1"] = "new Instruction"
+        i  = 'key;funPlayerDamage'
+        tratamentoDeDadosTeste["funPlayerDamage"] = "new Instruction"
         tratamentoDeDadosTeste["Tag2"] = "new Instruction2"
 
-    def send_instructions(self):
+        '''verifico se tem um método com o nome, caso tenha eu chamo'''
+        if instructions in self.methods:
+            self.methods[instructions]()
+
+    def send_instructions(self, key , msg):
         print("") # Envia via Print o resultado final do processamento
