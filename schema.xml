@@ -24,7 +24,7 @@
              <attributes>
                 <attrib target="label" filter="Being Hit(Enemy)" />
             </attributes>
-			<info value="attribute//InstanceID" />
+			<info value="attribute//ObjectName" />
 		</fact>
         <fact name="Attacking_Enemy">
              <attributes>
@@ -50,7 +50,7 @@
                     </fact>
                </facts>
           </rule>
-            <rule name="Teste_valor_input">
+            <rule name="PlayerHit">
                 <return name="x"/>
                 <inputs>
                     <input name="shooter"/>
@@ -62,20 +62,15 @@
                     </fact>
                </facts>
           </rule>
-            <rule name="2EnemyTest">
+            <rule name="EnemyHit">
                 <return name="x"/>
                 <inputs>
                     <input name="firstEnemy"/>
-                    <input name="secondEnemy"/>
                 </inputs>
                 <facts>
-                    <fact name="BeingHit_Player">
+                    <fact name="BeingHit_Enemy">
                         <input name="x"/>
                         <input name="firstEnemy"/>
-                    </fact>
-                    <fact name="BeingHit_Player">
-                        <input name="x"/>
-                        <input name="secondEnemy"/>
                     </fact>
                </facts>
           </rule>

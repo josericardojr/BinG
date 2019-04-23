@@ -30,10 +30,15 @@ class Processor:
     def chaserandstraight(self):
         inputs = \
             {
-                'firstEnemy': 'Chaser',
-                'straight': 'Straight',
+                'shooter': 'Straight',
             }
-        print(self.kanrenBing.rules["2EnemyTest"].run(inputs))
+        inputs2 = \
+            {
+                'shooter': 'Chaser',
+            }
+        if len(self.kanrenBing.rules["PlayerHit"].run(inputs)) > 0 & \
+                len(self.kanrenBing.rules["PlayerHit"].run(inputs2)):
+            print("chaser&straight;true")
 
     def fire_damage(self):
         inputs = \
@@ -43,7 +48,7 @@ class Processor:
         print('_' * 5)
         print('hi i am a player_damage example')
         print('calling rule: \'Teste_valor_input\'')
-        print(self.kanrenBing.rules["Teste_valor_input"].run(inputs))
+        print(self.kanrenBing.rules["PlayerHit"].run(inputs))
 
     def example_method(self):
         inputs = \
@@ -54,7 +59,7 @@ class Processor:
         print('_' * 5)
         print('hi i am an example')
         print('calling rule: \'Teste_valor_input\'')
-        print(self.kanrenBing.rules["Teste_valor_input"].run(inputs))
+        print(self.kanrenBing.rules["PlayerHit"].run(inputs))
 
     def add_method(self, method_key, method):
         if method_key not in self.methods:
