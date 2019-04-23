@@ -4,7 +4,6 @@ from ReaderXML.ReaderXML import *
 from kanren import Relation, facts, var, run
 from KanrenBing.KanrenBing import *
 
-
 tratamentoDeDadosTeste =	{
   "Tag1": "Dado1",
   "Tag2": "Dado2",
@@ -24,6 +23,17 @@ class Processor:
 
         key = 'player_damage'
         self.add_method(key, self.fire_damage)
+
+        key = '2Enemy'
+        self.add_method(key, self.chaserandstraight)
+
+    def chaserandstraight(self):
+        inputs = \
+            {
+                'firstEnemy': 'Chaser',
+                'straight': 'Straight',
+            }
+        print(self.kanrenBing.rules["2EnemyTest"].run(inputs))
 
     def fire_damage(self):
         inputs = \

@@ -14,12 +14,6 @@
             </attributes>
 			<info value="label" />
 		</fact>
-        <fact name="Round">
-            <attributes>
-                <attrib target = "label" filter = "Round" />
-            </attributes>
-			<info value="label" />
-		</fact>
         <fact name="BeingHit_Player">
              <attributes>
                 <attrib target="label" filter="Being Hit(Player)" />
@@ -65,6 +59,23 @@
                     <fact name="BeingHit_Player">
                         <input name="x"/>
                         <input name="shooter"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="2EnemyTest">
+                <return name="x"/>
+                <inputs>
+                    <input name="firstEnemy"/>
+                    <input name="secondEnemy"/>
+                </inputs>
+                <facts>
+                    <fact name="BeingHit_Player">
+                        <input name="x"/>
+                        <input name="firstEnemy"/>
+                    </fact>
+                    <fact name="BeingHit_Player">
+                        <input name="x"/>
+                        <input name="secondEnemy"/>
                     </fact>
                </facts>
           </rule>
