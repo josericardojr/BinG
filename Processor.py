@@ -39,6 +39,9 @@ class Processor:
         if len(self.kanrenBing.rules["PlayerHit"].run(inputs)) > 0 & \
                 len(self.kanrenBing.rules["PlayerHit"].run(inputs2)):
             print("chaser&straight;true")
+        else:
+            print("chaser&straight;false")
+
 
     def fire_damage(self):
         inputs = \
