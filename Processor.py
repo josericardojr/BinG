@@ -72,7 +72,6 @@ class Processor:
 
 
     def setup_bing(self, path_prov, path_schema):
-        print(path_prov)
         self.path_schema = path_schema
         reader = ReaderXML(path_prov)
         consult = PrologConsult()

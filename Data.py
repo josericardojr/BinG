@@ -1,13 +1,9 @@
 import sys
 import threading
-import time
-from os.path import *
-from Prolog.PrologConsult import *
-from Schema.SchemaReader import *
-from ReaderXML.ReaderXML import *
+import os
+import Loader as Loader
+
 from Processor import *
-import Commands as Com
-from KanrenBing.KanrenBing import *
 key_quit = 'key_quit'
 
 def run(processor):
@@ -21,11 +17,9 @@ def run(processor):
 char_split = ';'
 
 key_path_prov = 'path_prov'
-key_path_schema = 'path_schema'
 
 
 path_prov = ''
-path_schema = ''
 
 for arg in sys.argv:
     if key_path_prov in str(arg):
@@ -33,12 +27,17 @@ for arg in sys.argv:
         if len(str_split) > 1:
             path_prov = str_split[1]
 
-    if key_path_schema in str(arg):
-        str_split = str(arg).split(char_split)
-        if len(str_split) > 1:
-            path_schema = str_split[1]
+
+path_config_file = os.path.dirname(os.path.abspath(__file__))
+path_config_file = str(path_config_file) + '\config.xml'
 
 
+path_schema = ''
+if os.path.isfile(path_config_file):
+    xml = Loader.load_xml(path_config_file)
+    path_schema = xml.find('schema_path').text
+else:
+    print('could not find config.xml at ' + path_config_file)
 
 
 processor = Processor(path_prov, path_schema)
