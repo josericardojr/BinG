@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema name = "name">
+	<facts>
+        <fact name="HP_Player_Full">
+            <attributes>
+                <attrib target = "attribute//HP" filter = "9" />
+                <attrib target = "label" filter = "Player" />
+            </attributes>
+			<info value="attribute//HP" />
+		</fact>
+        <fact name="Round">
+            <attributes>
+                <attrib target = "label" filter = "Round" />
+            </attributes>
+			<info value="label" />
+		</fact>
+        <fact name="BeingHit_Player">
+             <attributes>
+                <attrib target="label" filter="Being Hit(Player)" />
+            </attributes>
+			<info value="attribute//LastType" />
+		</fact>
+        <fact name="BeingHit_Enemy">
+             <attributes>
+                <attrib target="label" filter="Being Hit(Enemy)" />
+            </attributes>
+			<info value="attribute//ObjectName" />
+		</fact>
+        <fact name="Attacking_Enemy">
+             <attributes>
+                <attrib target="label" filter="Attacking (Enemy)2" />
+            </attributes>
+			<info value="attribute//ObjectName" />
+		</fact>
+     </facts>
+     <rules>
+            <rule name="Counter">
+                <return name="shooter"/>
+                <inputs>
+                    <input name="shooter"/>
+                </inputs>
+                <facts>
+                    <fact name="BeingHit_Player">
+                        <input name="x"/>
+                        <input name="shooter"/>
+                    </fact>
+                    <fact name="BeingHit_Enemy">
+                        <input name="y"/>
+                        <input name="shooter"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="PlayerHit">
+                <return name="x"/>
+                <inputs>
+                    <input name="shooter"/>
+                </inputs>
+                <facts>
+                    <fact name="BeingHit_Player">
+                        <input name="x"/>
+                        <input name="shooter"/>
+                    </fact>
+               </facts>
+          </rule>
+            <rule name="EnemyHit">
+                <return name="x"/>
+                <inputs>
+                    <input name="firstEnemy"/>
+                </inputs>
+                <facts>
+                    <fact name="BeingHit_Enemy">
+                        <input name="x"/>
+                        <input name="firstEnemy"/>
+                    </fact>
+               </facts>
+          </rule>
+   </rules>
+</schema>

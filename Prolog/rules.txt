@@ -1,0 +1,8 @@
+playerHit(X,Y):-
+	f_1.1(X,Y),
+	f_1.2(A,B,C,D).
+fact_test(X_test,Y_test):-
+	f_1.1_test(X_test,Y_test),
+	f_1.2_test(A_test).
+fact_1(X_1,Y_1):-
+	f_1.1_test(X_1,Y_1).
