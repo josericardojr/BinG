@@ -39,3 +39,7 @@ sysinfo.txt
 .idea/FactGenerator.iml
 .idea/misc.xml
 *.pyc
+
+# Bing
+.idea/*
+config.xml
